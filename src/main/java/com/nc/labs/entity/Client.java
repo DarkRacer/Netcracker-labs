@@ -1,5 +1,6 @@
 package com.nc.labs.entity;
 
+import com.nc.labs.enums.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,9 +16,9 @@ public class Client {
     private String firstName;
     private String lastName;
     private LocalDate dateOfBirth;
-    private String gender;
-    private String numberPassport;
-    private String seriesPassport;
+    private Gender gender;
+    private int numberPassport;
+    private int seriesPassport;
 
     public int getAge() {
         LocalDate currentDate = LocalDate.now();
