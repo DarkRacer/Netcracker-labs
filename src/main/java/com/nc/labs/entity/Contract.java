@@ -3,15 +3,14 @@ package com.nc.labs.entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.Calendar;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @Getter
 @Setter
 public abstract class Contract {
     private int id;
-    private Calendar startDate;
-    private Calendar endDate;
+    private LocalDate startDate;
+    private LocalDate endDate;
     private Client client;
 }

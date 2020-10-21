@@ -2,7 +2,7 @@ package com.nc.labs.entity;
 
 import lombok.Getter;
 import lombok.Setter;
-import java.util.Calendar;
+import java.time.LocalDate;
 
 @Setter
 @Getter
@@ -11,7 +11,7 @@ public class СellularContract extends Contract{
     private int mbInternet;
     private int sms;
 
-    public СellularContract(int id, Calendar startDate, Calendar endDate, Client client, int minutes, int mbInternet, int sms){
+    public СellularContract(int id, LocalDate startDate, LocalDate endDate, Client client, int minutes, int mbInternet, int sms){
         super(id, startDate, endDate, client);
         this.minutes = minutes;
         this.mbInternet = mbInternet;

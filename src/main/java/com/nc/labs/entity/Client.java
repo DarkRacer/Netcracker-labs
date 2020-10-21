@@ -3,7 +3,8 @@ package com.nc.labs.entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.Period;
 
 @Setter
 @Getter
@@ -13,8 +14,13 @@ public class Client {
     private String surname;
     private String firstName;
     private String lastName;
-    private Calendar dateOfBirth;
+    private LocalDate dateOfBirth;
     private String gender;
     private String numberPassport;
     private String seriesPassport;
+
+    public int getAge() {
+        LocalDate currentDate = LocalDate.now();
+        return Period.between(this.dateOfBirth, currentDate).getYears();
+    }
 }
