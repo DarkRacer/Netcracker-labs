@@ -4,6 +4,7 @@ import com.nc.labs.enums.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -22,6 +23,7 @@ public class Client {
 
     public int getAge() {
         LocalDate currentDate = LocalDate.now();
+
         return Period.between(this.dateOfBirth, currentDate).getYears();
     }
 }

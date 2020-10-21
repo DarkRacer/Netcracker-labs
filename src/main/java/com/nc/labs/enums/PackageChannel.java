@@ -1,7 +1,6 @@
 package com.nc.labs.enums;
 
-public enum PackageChannel
-{
+public enum PackageChannel {
     DEFAULT,
     PLUS,
     PLUSPLUS
