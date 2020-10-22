@@ -1,9 +1,6 @@
 package com.nc.labs.repository;
 
-import com.nc.labs.entity.CellularContract;
-import com.nc.labs.entity.Client;
-import com.nc.labs.entity.InternetContract;
-import com.nc.labs.entity.TvContract;
+import com.nc.labs.entity.*;
 import com.nc.labs.enums.Gender;
 import com.nc.labs.enums.PackageChannel;
 import org.junit.Assert;
@@ -28,9 +25,9 @@ public class RepositoryTest {
 
         TvContract tvContract = new TvContract(1, LocalDate.of(2019, 11, 15),
                 LocalDate.of(2020, 11, 15), client2, PackageChannel.PLUS);
-        CellularContract cellularContract = new CellularContract(1, LocalDate.of(2020, 8, 1),
+        CellularContract cellularContract = new CellularContract(2, LocalDate.of(2020, 8, 1),
                 LocalDate.of(2021, 8, 1), client3, 1000, 51200, 100);
-        InternetContract internetContract = new InternetContract(1, LocalDate.of(2019, 12, 25),
+        InternetContract internetContract = new InternetContract(3, LocalDate.of(2019, 12, 25),
                 LocalDate.of(2020, 12, 25), client1, 300);
 
         contractRepository.add(tvContract);
@@ -49,12 +46,12 @@ public class RepositoryTest {
             actual.add(g);
         }
 
-        for (int i = 4; i < 14; i++) {
+        for (int i = 1; i < 14; i++) {
             contractRepository.add(new TvContract(i, LocalDate.of(2020, 9, 13),
                     LocalDate.of(2021, 9, 13), client4, PackageChannel.PLUS));
         }
 
-        for (int k = 0; k < contractRepository.getSize(); k++) {
+        for (int k = 1; k <= contractRepository.getSize(); k++) {
             expected.add(contractRepository.get(k).getId());
         }
 
@@ -66,14 +63,13 @@ public class RepositoryTest {
         List<Integer> expected = new ArrayList<>();
         List<Integer> actual = new ArrayList<>();
 
-        actual.add(1);
+        actual.add(2);
         actual.add(3);
 
         contractRepository.delete(1);
 
-        for (int k = 0; k < contractRepository.getSize(); k++) {
-            expected.add(contractRepository.get(k).getId());
-        }
+        expected.add(contractRepository.get(2).getId());
+        expected.add(contractRepository.get(3).getId());
 
         Assert.assertEquals(expected, actual);
     }
@@ -87,9 +83,9 @@ public class RepositoryTest {
         actual.add(2);
         actual.add(3);
 
-        for (int k = 0; k < contractRepository.getSize(); k++) {
-            expected.add(contractRepository.get(k).getId());
-        }
+        expected.add(contractRepository.get(1).getId());
+        expected.add(contractRepository.get(2).getId());
+        expected.add(contractRepository.get(3).getId());
 
         Assert.assertEquals(expected, actual);
     }
