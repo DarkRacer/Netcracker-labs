@@ -11,9 +11,20 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The class checks the operation of methods of the Repository class
+ * @author Maksim Shcherbakov
+ * @version 1.0
+ */
 public class RepositoryTest {
+    /**
+     * Object of the Repository class
+     */
     private final Repository contractRepository = new Repository();
 
+    /**
+     * The initial conditions for the tests
+     */
     @Before
     public void setUp() {
         Client client1 = new Client(1, "Иванов", "Иван", "Иванович",
@@ -35,6 +46,9 @@ public class RepositoryTest {
         contractRepository.add(internetContract);
     }
 
+    /**
+     * This method tests whether the contract is added to the repository
+     */
     @Test
     public void add() {
         Client client4 = new Client(4, "Сидоров", "Пётр", "Иванович",
@@ -58,6 +72,9 @@ public class RepositoryTest {
         Assert.assertEquals(expected, actual);
     }
 
+    /**
+     * This method tests whether a contract can be deleted from the repository
+     */
     @Test
     public void delete() {
         List<Integer> expected = new ArrayList<>();
@@ -74,6 +91,9 @@ public class RepositoryTest {
         Assert.assertEquals(expected, actual);
     }
 
+    /**
+     * This method tests if the search by contract ID is correct
+     */
     @Test
     public void get() {
         List<Integer> actual = new ArrayList<>();
@@ -90,6 +110,9 @@ public class RepositoryTest {
         Assert.assertEquals(expected, actual);
     }
 
+    /**
+     * This method tests whether the repository size is calculated correctly
+     */
     @Test
     public void getSize() {
         int actual = 3;

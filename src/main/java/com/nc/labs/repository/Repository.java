@@ -1,12 +1,34 @@
 package com.nc.labs.repository;
 
 import com.nc.labs.entity.Contract;
+import lombok.NoArgsConstructor;
 
+/**
+ * This class describes a repository for storing various contracts
+ * @author Maksim Shcherbakov
+ * @version 1.0
+ */
+@NoArgsConstructor
 public class Repository {
+    /**
+     * The initial size of the array
+     */
     private final int size = 10;
+
+    /**
+     * Array for storing contracts
+     */
     private Contract[] arrayContract = new Contract[size];
+
+    /**
+     * Number of contracts added
+     */
     private int pointer = 0;
 
+    /**
+     * The method adds a contract to the repository
+     * @param contract contract to add
+     */
     public void add(Contract contract) {
         if (check(contract)) {
             if (pointer == (arrayContract.length - 1)) {
@@ -21,6 +43,11 @@ public class Repository {
         }
     }
 
+    /**
+     * The method expands the repository
+     *
+     * @param newSize the new array size
+     */
     private void resize(int newSize) {
         Contract[] array = new Contract[newSize];
 
@@ -28,6 +55,10 @@ public class Repository {
         arrayContract = array;
     }
 
+    /**
+     * This method deletes the contract from the repository
+     * @param id Contract identifier
+     */
     public void delete(int id) {
         int index = pointer;
 
@@ -47,6 +78,11 @@ public class Repository {
         }
     }
 
+    /**
+     * This method returns the contract from the repository
+     * @param id contract identifier
+     * @return repository element or null
+     */
     public Contract get(int id) {
         for (int i = 0; i <= pointer; i++){
             if(arrayContract[i].getId() == id){
@@ -57,10 +93,19 @@ public class Repository {
         return null;
     }
 
+    /**
+     * This method returns the repository size
+     * @return repository size
+     */
     public int getSize() {
         return pointer;
     }
 
+    /**
+     * This method checks whether the contract can be added to the repository
+     * @param contract contract to add
+     * @return check result
+     */
     private boolean check (Contract contract){
         if (pointer != 0) {
             for (Contract contract1 : arrayContract) {

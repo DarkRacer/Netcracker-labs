@@ -9,11 +9,30 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The class checks the operation of methods of the Client class
+ * @author Maksim Shcherbakov
+ * @version 1.0
+ */
 public class ClientTest {
+    /**
+     * First object of the client class
+     */
     private Client client1;
+
+    /**
+     * Second object of the client class
+     */
     private Client client2;
+
+    /**
+     * Third object of the client class
+     */
     private Client client3;
 
+    /**
+     * The initial conditions for the tests
+     */
     @Before
     public void setUp() {
         client1 = new Client(1, "Иванов", "Иван", "Иванович",
@@ -24,6 +43,9 @@ public class ClientTest {
                 LocalDate.of(1991, 7, 1), Gender.FEMALE, 2013, 832424);
     }
 
+    /**
+     * The method tests the calculation of the client's current age
+     */
     @Test
     public void getAge() {
         List<Integer> actual = new ArrayList<>();
