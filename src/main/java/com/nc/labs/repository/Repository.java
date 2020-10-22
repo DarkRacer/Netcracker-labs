@@ -1,43 +1,46 @@
 package com.nc.labs.repository;
 
-public class Repository<T> {
+import com.nc.labs.entity.Contract;
+
+public class Repository {
     private final int size = 10;
-    private Object[] arrayObjects = new Object[size];
+    private Contract[] arrayContract = new Contract[size];
     private int pointer = 0;
 
-    public void add(T object) {
-        if (pointer == (arrayObjects.length - 1)) {
-            resize(arrayObjects.length + 5);
-        }
+    public void add(Contract contract) {
+            if (pointer == (arrayContract.length - 1)) {
+                resize(arrayContract.length + 5);
+            }
 
-        arrayObjects[pointer] = object;
-        pointer++;
+            contract.setId(pointer + 1);
+            arrayContract[pointer] = contract;
+            pointer++;
     }
 
     private void resize(int newSize) {
-        Object[] array = new Object[newSize];
+        Contract[] array = new Contract[newSize];
 
-        System.arraycopy(arrayObjects, 0, array, 0, pointer);
-        arrayObjects = array;
+        System.arraycopy(arrayContract, 0, array, 0, pointer);
+        arrayContract = array;
     }
 
     public void delete(int index) {
-        if (index < arrayObjects.length) {
-            arrayObjects[index] = null;
+        if (index < arrayContract.length) {
+            arrayContract[index] = null;
             pointer--;
 
             for (int i = index; i < pointer; i++) {
-                Object buffer = arrayObjects[i];
+                Contract buffer = arrayContract[i];
 
-                arrayObjects[i] = arrayObjects[i + 1];
-                arrayObjects[i + 1] = buffer;
+                arrayContract[i] = arrayContract[i + 1];
+                arrayContract[i + 1] = buffer;
             }
         }
     }
 
-    public T get(int index) {
-        if (index < arrayObjects.length) {
-            return (T) arrayObjects[index];
+    public Contract get(int index) {
+        if (index < arrayContract.length) {
+            return arrayContract[index];
         }
         else {
             return null;

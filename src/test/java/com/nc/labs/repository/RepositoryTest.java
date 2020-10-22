@@ -1,6 +1,8 @@
 package com.nc.labs.repository;
 
+import com.nc.labs.entity.CellularContract;
 import com.nc.labs.entity.Client;
+import com.nc.labs.entity.InternetContract;
 import com.nc.labs.entity.TvContract;
 import com.nc.labs.enums.Gender;
 import com.nc.labs.enums.PackageChannel;
@@ -13,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RepositoryTest {
-    private final Repository<TvContract> tvContractRepository = new Repository<>();
+    private final Repository contractRepository = new Repository();
 
     @Before
     public void setUp() {
@@ -24,16 +26,16 @@ public class RepositoryTest {
         Client client3 = new Client(3, "Степанова", "Мария", "Степановна",
                 LocalDate.of(1991, 7, 1), Gender.FEMALE, 2013, 832424);
 
-        TvContract tvContract1 = new TvContract(1, LocalDate.of(2019, 12, 25),
-                LocalDate.of(2020, 12, 25), client1, PackageChannel.DEFAULT);
-        TvContract tvContract2 = new TvContract(2, LocalDate.of(2019, 11, 15),
+        TvContract tvContract = new TvContract(1, LocalDate.of(2019, 11, 15),
                 LocalDate.of(2020, 11, 15), client2, PackageChannel.PLUS);
-        TvContract tvContract3 = new TvContract(3, LocalDate.of(2020, 8, 1),
-                LocalDate.of(2021, 8, 1), client3, PackageChannel.PLUSPLUS);
+        CellularContract cellularContract = new CellularContract(1, LocalDate.of(2020, 8, 1),
+                LocalDate.of(2021, 8, 1), client3, 1000, 51200, 100);
+        InternetContract internetContract = new InternetContract(1, LocalDate.of(2019, 12, 25),
+                LocalDate.of(2020, 12, 25), client1, 300);
 
-        tvContractRepository.add(tvContract1);
-        tvContractRepository.add(tvContract2);
-        tvContractRepository.add(tvContract3);
+        contractRepository.add(tvContract);
+        contractRepository.add(cellularContract);
+        contractRepository.add(internetContract);
     }
 
     @Test
@@ -48,12 +50,12 @@ public class RepositoryTest {
         }
 
         for (int i = 4; i < 14; i++) {
-            tvContractRepository.add(new TvContract(i, LocalDate.of(2020, 9, 13),
+            contractRepository.add(new TvContract(i, LocalDate.of(2020, 9, 13),
                     LocalDate.of(2021, 9, 13), client4, PackageChannel.PLUS));
         }
 
-        for (int k = 0; k < tvContractRepository.getSize(); k++) {
-            expected.add(tvContractRepository.get(k).getId());
+        for (int k = 0; k < contractRepository.getSize(); k++) {
+            expected.add(contractRepository.get(k).getId());
         }
 
         Assert.assertEquals(expected, actual);
@@ -67,10 +69,10 @@ public class RepositoryTest {
         actual.add(1);
         actual.add(3);
 
-        tvContractRepository.delete(1);
+        contractRepository.delete(1);
 
-        for (int k = 0; k < tvContractRepository.getSize(); k++) {
-            expected.add(tvContractRepository.get(k).getId());
+        for (int k = 0; k < contractRepository.getSize(); k++) {
+            expected.add(contractRepository.get(k).getId());
         }
 
         Assert.assertEquals(expected, actual);
@@ -85,8 +87,8 @@ public class RepositoryTest {
         actual.add(2);
         actual.add(3);
 
-        for (int k = 0; k < tvContractRepository.getSize(); k++) {
-            expected.add(tvContractRepository.get(k).getId());
+        for (int k = 0; k < contractRepository.getSize(); k++) {
+            expected.add(contractRepository.get(k).getId());
         }
 
         Assert.assertEquals(expected, actual);
@@ -95,7 +97,7 @@ public class RepositoryTest {
     @Test
     public void getSize() {
         int actual = 3;
-        int expected = tvContractRepository.getSize();
+        int expected = contractRepository.getSize();
 
         Assert.assertEquals(expected, actual);
     }
