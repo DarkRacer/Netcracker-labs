@@ -76,6 +76,8 @@ public class Repository {
             arrayContract[i] = arrayContract[i + 1];
             arrayContract[i + 1] = buffer;
         }
+
+        pointer--;
     }
 
     /**
