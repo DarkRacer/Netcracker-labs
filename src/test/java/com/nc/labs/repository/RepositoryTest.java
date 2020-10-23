@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * The class checks the operation of methods of the Repository class
  * @author Maksim Shcherbakov
- * @version 1.0
+ * @version 1.1
  */
 public class RepositoryTest {
     /**
@@ -35,11 +35,11 @@ public class RepositoryTest {
                 LocalDate.of(1991, 7, 1), Gender.FEMALE, 2013, 832424);
 
         TvContract tvContract = new TvContract(1, LocalDate.of(2019, 11, 15),
-                LocalDate.of(2020, 11, 15), client2, PackageChannel.PLUS);
+                LocalDate.of(2020, 11, 15), 234364651,  client2, PackageChannel.PLUS);
         CellularContract cellularContract = new CellularContract(2, LocalDate.of(2020, 8, 1),
-                LocalDate.of(2021, 8, 1), client3, 1000, 51200, 100);
+                LocalDate.of(2021, 8, 1), 123844533, client3, 1000, 51200, 100);
         InternetContract internetContract = new InternetContract(3, LocalDate.of(2019, 12, 25),
-                LocalDate.of(2020, 12, 25), client1, 300);
+                LocalDate.of(2020, 12, 25), 562364324, client1, 300);
 
         contractRepository.add(tvContract);
         contractRepository.add(cellularContract);
@@ -62,7 +62,7 @@ public class RepositoryTest {
 
         for (int i = 1; i < 14; i++) {
             contractRepository.add(new TvContract(i, LocalDate.of(2020, 9, 13),
-                    LocalDate.of(2021, 9, 13), client4, PackageChannel.PLUS));
+                    LocalDate.of(2021, 9, 13), 747343453, client4, PackageChannel.PLUS));
         }
 
         for (int k = 1; k <= contractRepository.getSize(); k++) {

@@ -10,7 +10,7 @@ import java.time.LocalDate;
 /**
  * Class describes the contract
  * @author Maksim Shcherbakov
- * @version 1.0
+ * @version 1.1
  */
 @Getter
 @Setter
@@ -31,6 +31,11 @@ public abstract class Contract {
      * Contract end date
      */
     private LocalDate endDate;
+
+    /**
+     * Contract number
+     */
+    private int numberContract;
 
     /**
      * Contract client

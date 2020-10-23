@@ -7,7 +7,7 @@ import java.time.LocalDate;
 /**
  * Class describes a internet contract
  * @author Maksim Shcherbakov
- * @version 1.0
+ * @version 1.1
  */
 @Setter
 @Getter
@@ -22,11 +22,12 @@ public class InternetContract extends Contract {
      * @param id internet contract identifier
      * @param startDate internet contract start date
      * @param endDate internet contract end date
+     * @param numberContract internet contract number
      * @param client internet contract client date
      * @param maximumSpeed the maximum speed on the contract
      */
-    public InternetContract(int id, LocalDate startDate, LocalDate endDate, Client client, int maximumSpeed) {
-        super(id, startDate, endDate, client);
+    public InternetContract(int id, LocalDate startDate, LocalDate endDate, int numberContract, Client client, int maximumSpeed) {
+        super(id, startDate, endDate, numberContract, client);
         this.maximumSpeed = maximumSpeed;
     }
 }
