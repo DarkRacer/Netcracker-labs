@@ -1,17 +1,21 @@
 package com.nc.labs.repository;
 
 import com.nc.labs.entity.Contract;
+import com.nc.labs.sort.BubbleSort;
+import com.nc.labs.sort.ISorter;
 import lombok.NoArgsConstructor;
 
+import java.util.Comparator;
 import java.util.function.Predicate;
 
 /**
  * This class describes a repository for storing various contracts
+ * @param <T> This describes type parameter
  * @author Maksim Shcherbakov
- * @version 1.1
+ * @version 1.2
  */
 @NoArgsConstructor
-public class Repository {
+public class Repository<T> {
     /**
      * The initial size of the array
      */
@@ -26,6 +30,11 @@ public class Repository {
      * Number of contracts added
      */
     private int pointer = 0;
+
+    /**
+     * Sorting algorithm
+     */
+    private ISorter sorter = new BubbleSort();
 
     /**
      * The method adds a contract to the repository
@@ -88,7 +97,7 @@ public class Repository {
      */
     public Contract get(int id) {
         for (int i = 0; i <= pointer; i++){
-            if(arrayContract[i].getId() == id){
+            if(arrayContract[i] != null && arrayContract[i].getId() == id){
                 return arrayContract[i];
             }
         }
@@ -128,13 +137,13 @@ public class Repository {
      * @param criterion search criterion
      * @return found contracts
      */
-    public Contract[] search (Predicate<Contract> criterion) {
+    public Contract[] search(Predicate<T> criterion) {
         Contract[] array = new Contract[arrayContract.length];
         int g = 0;
 
         for (Contract contract : arrayContract) {
             if (contract != null) {
-                if (criterion.test(contract)) {
+                if (criterion.test((T)contract)) {
                     array[g] = contract;
                     g++;
                 }
@@ -144,5 +153,13 @@ public class Repository {
         if (g == 0) {
             return null;
         } else return array;
+    }
+
+    /**
+     * This method sorts by criteria
+     * @param comparator sorting criterion
+     */
+    public void sort(Comparator<T> comparator){
+        sorter.sort(arrayContract, comparator);
     }
 }

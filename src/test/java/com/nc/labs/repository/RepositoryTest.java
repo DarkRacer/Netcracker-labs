@@ -14,13 +14,13 @@ import java.util.List;
 /**
  * The class checks the operation of methods of the Repository class
  * @author Maksim Shcherbakov
- * @version 1.3
+ * @version 1.4
  */
 public class RepositoryTest {
     /**
      * Object of the Repository class
      */
-    private final Repository contractRepository = new Repository();
+    private final Repository<Contract> contractRepository = new Repository<>();
 
     /**
      * The initial conditions for the tests
@@ -194,7 +194,48 @@ public class RepositoryTest {
         actual.add(2);
         actual.add(3);
         actual.add(7);
+
         Contract[] array = contractRepository.search(contractSearch -> contractSearch.getClient().getId() <= 4);
+        for(int i = 0; i < array.length && array[i] != null; i++)
+            expected.add(array[i].getId());
+
+        actual.add(1);
+        actual.add(3);
+        actual.add(7);
+        actual.add(11);
+
+        array = contractRepository.search(contractSearch -> contractSearch.getClient().getGender() == Gender.MALE);
+        for(int i = 0; i < array.length && array[i] != null; i++)
+            expected.add(array[i].getId());
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    /**
+     * This method checks whether the sort is performed correctly by criteria
+     */
+    @Test
+    public void sort(){
+        List<Integer> actual = new ArrayList<>();
+        List<Integer> expected = new ArrayList<>();
+
+        contractRepository.sort((Contract contract1, Contract contract2) -> contract1.getClass().getName().compareTo(contract2.getClass().getName()));
+
+        actual.add(2);
+        actual.add(3);
+        actual.add(1);
+
+        Contract[] array = contractRepository.search(contractSearch -> contractSearch.getId() > -1);
+        for(int i = 0; i < array.length && array[i] != null; i++)
+            expected.add(array[i].getId());
+
+        contractRepository.sort((Contract contract1, Contract contract2) -> new Integer(contract1.getId()).compareTo(new Integer(contract2.getId())));
+
+        actual.add(1);
+        actual.add(2);
+        actual.add(3);
+
+        array = contractRepository.search(contractSearch -> contractSearch.getId() > -1);
         for(int i = 0; i < array.length && array[i] != null; i++)
             expected.add(array[i].getId());
 
