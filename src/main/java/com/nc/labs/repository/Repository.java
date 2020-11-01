@@ -3,10 +3,12 @@ package com.nc.labs.repository;
 import com.nc.labs.entity.Contract;
 import lombok.NoArgsConstructor;
 
+import java.util.function.Predicate;
+
 /**
  * This class describes a repository for storing various contracts
  * @author Maksim Shcherbakov
- * @version 1.0
+ * @version 1.1
  */
 @NoArgsConstructor
 public class Repository {
@@ -45,7 +47,6 @@ public class Repository {
 
     /**
      * The method expands the repository
-     *
      * @param newSize the new array size
      */
     private void resize(int newSize) {
@@ -120,5 +121,28 @@ public class Repository {
         }
 
         return true;
+    }
+
+    /**
+     * This method search for contacts by criteria
+     * @param criterion search criterion
+     * @return found contracts
+     */
+    public Contract[] search (Predicate<Contract> criterion) {
+        Contract[] array = new Contract[arrayContract.length];
+        int g = 0;
+
+        for (Contract contract : arrayContract) {
+            if (contract != null) {
+                if (criterion.test(contract)) {
+                    array[g] = contract;
+                    g++;
+                }
+            }
+        }
+
+        if (g == 0) {
+            return null;
+        } else return array;
     }
 }

@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * The class checks the operation of methods of the Repository class
  * @author Maksim Shcherbakov
- * @version 1.2
+ * @version 1.3
  */
 public class RepositoryTest {
     /**
@@ -169,6 +169,34 @@ public class RepositoryTest {
 
         actual.add(9);
         expected.add(contractRepository.get(9).getId());
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    /**
+     * This method checks whether the search is performed correctly by criteria
+     */
+    @Test
+    public void search(){
+        Client client4 = new Client(4, "Сидоров", "Пётр", "Иванович",
+                LocalDate.of(1982, 5, 19), Gender.MALE, 2014, 835621);
+        Client client5 = new Client(5, "Иванов", "Иван", "Иванович",
+                LocalDate.of(1986, 2, 12), Gender.MALE, 2013, 892314);
+        List<Integer> actual = new ArrayList<>();
+        List<Integer> expected = new ArrayList<>();
+
+        contractRepository.add(new TvContract(7, LocalDate.of(2020, 6, 11),
+                LocalDate.of(2021, 6, 11), 344752324, client4, PackageChannel.DEFAULT));
+        contractRepository.add(new CellularContract(11, LocalDate.of(2020, 4, 28),
+                LocalDate.of(2021, 4, 28), 747343453, client5, 900, 30720, 50));
+
+        actual.add(1);
+        actual.add(2);
+        actual.add(3);
+        actual.add(7);
+        Contract[] array = contractRepository.search(contractSearch -> contractSearch.getClient().getId() <= 4);
+        for(int i = 0; i < array.length && array[i] != null; i++)
+            expected.add(array[i].getId());
 
         Assert.assertEquals(expected, actual);
     }
