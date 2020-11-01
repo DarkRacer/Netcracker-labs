@@ -12,7 +12,7 @@ import java.time.Period;
 /**
  * Class describes the client
  * @author Maksim Shcherbakov
- * @version 1.0
+ * @version 1.1
  */
 @Setter
 @Getter
@@ -67,5 +67,22 @@ public class Client {
         LocalDate currentDate = LocalDate.now();
 
         return Period.between(this.dateOfBirth, currentDate).getYears();
+    }
+
+    /**
+     * This method returns all information about the client
+     * @return information about the client
+     */
+    @Override
+    public String toString() {
+        return  "   id: " + id + "\n" +
+                "   Фамилия: " + surname + "\n" +
+                "   Имя: " + firstName + "\n" +
+                "   Отчество: " + patronymic + "\n" +
+                "   Дата рождения: " + dateOfBirth + "\n" +
+                "   Пол: " + gender + "\n" +
+                "   Номер паспорта: " + numberPassport + "\n" +
+                "   Серия паспорта: " + seriesPassport
+                ;
     }
 }

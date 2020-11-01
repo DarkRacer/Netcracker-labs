@@ -9,7 +9,7 @@ import java.time.LocalDate;
 /**
  * Class describes a tv contract
  * @author Maksim Shcherbakov
- * @version 1.1
+ * @version 1.2
  */
 @Setter
 @Getter
@@ -31,5 +31,20 @@ public class TvContract extends Contract {
     public TvContract(int id, LocalDate startDate, LocalDate endDate, int numberContract, Client client, PackageChannel packageChannel) {
         super(id, startDate, endDate, numberContract, client);
         this.packageChannel = packageChannel;
+    }
+
+    /**
+     * This method returns all information about the tv contract
+     * @return information about the tv contract
+     */
+    @Override
+    public String toString() {
+        return "Контракт цифрового телевидения " + "\n" +
+                " id: " + getId() + "\n" +
+                " Дата начала контракта: " + getStartDate() + "\n" +
+                " Дата окончания контракта: " + getEndDate() + "\n" +
+                " Номер контракта: " + getNumberContract() + "\n" +
+                " Пакет каналов: " + packageChannel + "\n" +
+                " Владелец контракта \n" +  getClient().toString();
     }
 }
