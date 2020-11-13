@@ -3,6 +3,7 @@ package com.nc.labs.csv;
 import com.nc.labs.entity.*;
 import com.nc.labs.enums.PackageChannel;
 import com.nc.labs.enums.TypeContract;
+import com.nc.labs.repository.ClientRepository;
 import com.nc.labs.repository.Repository;
 import com.opencsv.bean.CsvToBeanBuilder;
 import java.io.*;
@@ -10,9 +11,13 @@ import java.io.*;
 /**
  * Class for parsing a csv file
  * @author Maksim Shcherbakov
- * @version 1.0
+ * @version 1.1
  */
 public class ReaderCSV {
+    /**
+     * Object of the ClientRepository class
+     */
+    private static final ClientRepository clientRepository = new ClientRepository();
 
     /**
      * This method parses the csv file
@@ -37,53 +42,44 @@ public class ReaderCSV {
      * @param contractRepository repository where data is entered
      */
     private void converting (ContractCSV contractCSV, Repository<Contract> contractRepository) {
-        if (contractCSV.check()){
+        if (contractCSV.check()) {
             String[] strings = contractCSV.getAddInfo().split(",");
-            Client client = createClient(contractCSV);
+            Client client = clientRepository.createClient(contractCSV.getIdClient(), contractCSV.getSurname(),
+                    contractCSV.getFirstName(), contractCSV.getPatronymic(), contractCSV.getDateOfBirth(),
+                    contractCSV.getGender(), contractCSV.getNumberPassport(), contractCSV.getSeriesPassport());
 
-            if (contractCSV.getType() == TypeContract.TV){
-                TvContract tvContract = createTvContract(contractCSV, client, strings[0]);
+                if (contractCSV.getType() == TypeContract.TV) {
+                    TvContract tvContract = createTvContract(contractCSV, client, strings[0]);
 
-                if (contractRepository.getSize() != 0){
-                    if (checkExists(tvContract, contractRepository)){
-                        contractRepository.add(tvContract);
+                    if (contractRepository.getSize() != 0) {
+                        if (checkExists(tvContract, contractRepository)) {
+                            contractRepository.add(tvContract);
+                        }
                     }
+                    else contractRepository.add(tvContract);
+
                 }
-                else contractRepository.add(tvContract);
+                else if (contractCSV.getType() == TypeContract.Cellular) {
+                    CellularContract cellularContract = createCellularContract(contractCSV, client, strings);
 
-            }
-            else if (contractCSV.getType() == TypeContract.Cellular){
-                CellularContract cellularContract = createCellularContract(contractCSV, client, strings);
-
-                if (contractRepository.getSize() != 0){
-                    if (checkExists(cellularContract, contractRepository)){
-                        contractRepository.add(cellularContract);
+                    if (contractRepository.getSize() != 0) {
+                        if (checkExists(cellularContract, contractRepository)) {
+                            contractRepository.add(cellularContract);
+                        }
                     }
+                    else contractRepository.add(cellularContract);
                 }
-                else contractRepository.add(cellularContract);
-            }
-            else {
-               InternetContract internetContract = createInternetContract(contractCSV, client, strings[0]);
+                else {
+                    InternetContract internetContract = createInternetContract(contractCSV, client, strings[0]);
 
-                if (contractRepository.getSize() != 0){
-                    if (checkExists(internetContract, contractRepository)){
-                        contractRepository.add(internetContract);
+                    if (contractRepository.getSize() != 0) {
+                        if (checkExists(internetContract, contractRepository)) {
+                            contractRepository.add(internetContract);
+                        }
                     }
+                    else contractRepository.add(internetContract);
                 }
-                else contractRepository.add(internetContract);
-            }
         }
-    }
-
-    /**
-     * This method creates a client
-     * @param contractCSV data from the file
-     * @return client
-     */
-    private Client createClient (ContractCSV contractCSV){
-        return new Client(contractCSV.getIdClient(), contractCSV.getSurname(), contractCSV.getFirstName(),
-                contractCSV.getPatronymic(), contractCSV.getDateOfBirth(), contractCSV.getGender(),
-                contractCSV.getNumberPassport(), contractCSV.getSeriesPassport());
     }
 
     /**
@@ -149,9 +145,7 @@ public class ReaderCSV {
      */
     private boolean checkExists(TvContract tvContract, Repository<Contract> contractRepository){
         return  tvContract != null &&
-                contractRepository.search(contract -> contract.getClient().getNumberPassport() ==
-                        tvContract.getClient().getNumberPassport()
-                        && contract.getClient().getSeriesPassport() == tvContract.getClient().getSeriesPassport()
+                contractRepository.search(contract -> contract.getClient() == tvContract.getClient()
                         && contract.getStartDate().equals(tvContract.getStartDate())
                         && contract.getClass().getName().equals(tvContract.getClass().getName())) == null;
     }
@@ -163,9 +157,7 @@ public class ReaderCSV {
      * @return true - does not exist or false - exists
      */
     private boolean checkExists(CellularContract cellularContract, Repository<Contract> contractRepository){
-        return  contractRepository.search(contract -> contract.getClient().getNumberPassport() ==
-                cellularContract.getClient().getNumberPassport()
-                && contract.getClient().getSeriesPassport() == cellularContract.getClient().getSeriesPassport()
+        return  contractRepository.search(contract -> contract.getClient() == cellularContract.getClient()
                 && contract.getStartDate().equals(cellularContract.getStartDate())
                 && contract.getClass().getName().equals(cellularContract.getClass().getName())) == null;
     }
@@ -177,9 +169,7 @@ public class ReaderCSV {
      * @return true - does not exist or false - exists
      */
     private boolean checkExists(InternetContract internetContract, Repository<Contract> contractRepository){
-        return  contractRepository.search(contract -> contract.getClient().getNumberPassport() ==
-                internetContract.getClient().getNumberPassport()
-                && contract.getClient().getSeriesPassport() == internetContract.getClient().getSeriesPassport()
+        return  contractRepository.search(contract -> contract.getClient() == internetContract.getClient()
                 && contract.getStartDate().equals(internetContract.getStartDate())
                 && contract.getClass().getName().equals(internetContract.getClass().getName())) == null;
     }
