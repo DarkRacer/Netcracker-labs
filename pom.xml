@@ -14,6 +14,7 @@
         <junit>4.13.1</junit>
         <lombok>1.18.4</lombok>
         <com.opencsv>5.3</com.opencsv>
+        <log4j>1.2.17</log4j>
     </properties>
 
     <build>
@@ -48,6 +49,12 @@
             <groupId>com.opencsv</groupId>
             <artifactId>opencsv</artifactId>
             <version>${com.opencsv}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j}</version>
         </dependency>
     </dependencies>
 </project>
