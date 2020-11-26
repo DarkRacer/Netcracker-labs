@@ -15,7 +15,7 @@ import java.time.LocalDate;
 /**
  * CSV file template
  * @author Maksim Shcherbakov
- * @version 1.0
+ * @version 1.1
  */
 @Getter
 @Setter
@@ -105,17 +105,4 @@ public class ContractCSV {
      */
     @CsvBindByPosition(position = 13)
     private String addInfo;
-
-    /**
-     * This method checks whether the data was converted correctly
-     * @return true - correct or false - not correct
-     */
-    public boolean check() {
-        return this.id != 0 && this.startDate != null && this.endDate != null
-                && this.numberContract != 0 && this.idClient != 0
-                && this.surname != null && this.firstName != null
-                && this.dateOfBirth != null && this.gender != null
-                && this.numberPassport != 0 && this.seriesPassport != 0
-                && this.type != null && this.addInfo != null;
-    }
 }

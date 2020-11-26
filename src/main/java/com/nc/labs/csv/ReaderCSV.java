@@ -3,8 +3,14 @@ package com.nc.labs.csv;
 import com.nc.labs.entity.*;
 import com.nc.labs.enums.PackageChannel;
 import com.nc.labs.enums.TypeContract;
+import com.nc.labs.validation.contract.ContractStatus;
 import com.nc.labs.repository.ClientRepository;
 import com.nc.labs.repository.Repository;
+import com.nc.labs.validation.*;
+import com.nc.labs.validation.contract.ValidatorContract;
+import com.nc.labs.validation.contract.ValidatorContractCellular;
+import com.nc.labs.validation.contract.ValidatorContractInternet;
+import com.nc.labs.validation.contract.ValidatorContractTV;
 import com.opencsv.bean.CsvToBeanBuilder;
 import java.io.*;
 
@@ -31,6 +37,9 @@ public class ReaderCSV {
             beanBuilder.withSeparator(';');
             beanBuilder.withType(ContractCSV.class).withSkipLines(1).withIgnoreLeadingWhiteSpace(true);
             beanBuilder.build().parse().forEach(contractCSV -> converting(contractCSV, contractRepository));
+
+            ValidatorContract.clearLine();
+            ValidatorClient.clearLineClient();
         } catch (FileNotFoundException e) {
             System.out.println(e);
         }
@@ -42,26 +51,34 @@ public class ReaderCSV {
      * @param contractRepository repository where data is entered
      */
     private void converting (ContractCSV contractCSV, Repository<Contract> contractRepository) {
-        if (contractCSV.check()) {
-            String[] strings = contractCSV.getAddInfo().split(",");
-            Client client = clientRepository.createClient(contractCSV.getIdClient(), contractCSV.getSurname(),
-                    contractCSV.getFirstName(), contractCSV.getPatronymic(), contractCSV.getDateOfBirth(),
-                    contractCSV.getGender(), contractCSV.getNumberPassport(), contractCSV.getSeriesPassport());
+        String[] strings = contractCSV.getAddInfo().split(",");
+        ValidatorContractTV validatorContractTV = new ValidatorContractTV();
+        ValidatorContractCellular validatorContractCellular = new ValidatorContractCellular();
+        ValidatorContractInternet validatorContractInternet = new ValidatorContractInternet();
+        Client client = clientRepository.createClient(contractCSV.getIdClient(), contractCSV.getSurname(),
+                contractCSV.getFirstName(), contractCSV.getPatronymic(), contractCSV.getDateOfBirth(),
+                contractCSV.getGender(), contractCSV.getNumberPassport(), contractCSV.getSeriesPassport());
 
-                if (contractCSV.getType() == TypeContract.TV) {
-                    TvContract tvContract = createTvContract(contractCSV, client, strings[0]);
+        if (client != null) {
+            if (contractCSV.getType() == TypeContract.TV) {
+                TvContract tvContract = createTvContract(contractCSV, client, strings[0]);
 
+                if (tvContract != null &&
+                        ContractStatus.checkStatus(validatorContractTV.check(tvContract))) {
                     if (contractRepository.getSize() != 0) {
                         if (checkExists(tvContract, contractRepository)) {
                             contractRepository.add(tvContract);
                         }
                     }
                     else contractRepository.add(tvContract);
-
                 }
-                else if (contractCSV.getType() == TypeContract.Cellular) {
-                    CellularContract cellularContract = createCellularContract(contractCSV, client, strings);
 
+            }
+            else if (contractCSV.getType() == TypeContract.Cellular) {
+                CellularContract cellularContract = createCellularContract(contractCSV, client, strings);
+
+                if (cellularContract != null &&
+                        ContractStatus.checkStatus(validatorContractCellular.check(cellularContract))) {
                     if (contractRepository.getSize() != 0) {
                         if (checkExists(cellularContract, contractRepository)) {
                             contractRepository.add(cellularContract);
@@ -69,9 +86,12 @@ public class ReaderCSV {
                     }
                     else contractRepository.add(cellularContract);
                 }
-                else {
-                    InternetContract internetContract = createInternetContract(contractCSV, client, strings[0]);
+            }
+            else {
+                InternetContract internetContract = createInternetContract(contractCSV, client, strings[0]);
 
+                if (internetContract != null &&
+                        ContractStatus.checkStatus(validatorContractInternet.check(internetContract))) {
                     if (contractRepository.getSize() != 0) {
                         if (checkExists(internetContract, contractRepository)) {
                             contractRepository.add(internetContract);
@@ -79,6 +99,7 @@ public class ReaderCSV {
                     }
                     else contractRepository.add(internetContract);
                 }
+            }
         }
     }
 

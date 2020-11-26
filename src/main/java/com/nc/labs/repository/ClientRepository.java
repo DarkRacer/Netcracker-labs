@@ -2,6 +2,8 @@ package com.nc.labs.repository;
 
 import com.nc.labs.entity.Client;
 import com.nc.labs.enums.Gender;
+import com.nc.labs.validation.contract.ContractStatus;
+import com.nc.labs.validation.ValidatorClient;
 
 import java.time.LocalDate;
 
@@ -37,29 +39,33 @@ public class ClientRepository {
                                Gender gender, int numberPassport, int seriesPassport) {
         Client client = new Client(id, surname, firstName, patronymic, dateOfBirth, gender,
                 numberPassport, seriesPassport);
+        ValidatorClient validatorClient = new ValidatorClient();
 
-        if (pointer != 0) {
-            Client client1 = check(client);
+        if (ContractStatus.checkStatus(validatorClient.checkClient(client))) {
+            if (pointer != 0) {
+                Client client1 = check(client);
 
-            if (pointer == (arrayClient.length - 1)) {
-                resize();
-            }
+                if (pointer == (arrayClient.length - 1)) {
+                    resize();
+                }
 
-            if (client1 == null) {
-                arrayClient[pointer] = client;
-                pointer++;
-                return client;
+                if (client1 == null) {
+                    arrayClient[pointer] = client;
+                    pointer++;
+                    return client;
+                }
+                else {
+                    return client1;
+                }
             }
             else {
-                return client1;
+                arrayClient[pointer] = client;
+                pointer++;
+
+                return client;
             }
         }
-        else {
-            arrayClient[pointer] = client;
-            pointer++;
-
-            return client;
-        }
+        else return null;
     }
 
 
