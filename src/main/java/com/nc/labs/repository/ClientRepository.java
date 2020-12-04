@@ -2,8 +2,6 @@ package com.nc.labs.repository;
 
 import com.nc.labs.entity.Client;
 import com.nc.labs.enums.Gender;
-import com.nc.labs.validation.contract.ContractStatus;
-import com.nc.labs.validation.ValidatorClient;
 
 import java.time.LocalDate;
 
@@ -39,9 +37,7 @@ public class ClientRepository {
                                Gender gender, int numberPassport, int seriesPassport) {
         Client client = new Client(id, surname, firstName, patronymic, dateOfBirth, gender,
                 numberPassport, seriesPassport);
-        ValidatorClient validatorClient = new ValidatorClient();
 
-        if (ContractStatus.checkStatus(validatorClient.checkClient(client))) {
             if (pointer != 0) {
                 Client client1 = check(client);
 
@@ -64,8 +60,6 @@ public class ClientRepository {
 
                 return client;
             }
-        }
-        else return null;
     }
 
 

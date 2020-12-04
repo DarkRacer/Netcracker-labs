@@ -1,11 +1,11 @@
 package com.nc.labs.enums;
 
 /**
- * Enumeration of types of type status
+ * Enumeration of types status
  * @author Maksim Shcherbakov
- * @version 1.0
+ * @version 1.1
  */
-public enum TypeStatus {
+public enum Status {
     /**
      * There is no error
      */

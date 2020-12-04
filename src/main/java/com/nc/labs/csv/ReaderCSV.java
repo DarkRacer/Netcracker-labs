@@ -2,28 +2,49 @@ package com.nc.labs.csv;
 
 import com.nc.labs.entity.*;
 import com.nc.labs.enums.PackageChannel;
+import com.nc.labs.enums.Status;
 import com.nc.labs.enums.TypeContract;
-import com.nc.labs.validation.contract.ContractStatus;
+import com.nc.labs.validation.Validator;
+import com.nc.labs.validation.client.*;
+import com.nc.labs.validation.contract.*;
 import com.nc.labs.repository.ClientRepository;
 import com.nc.labs.repository.Repository;
-import com.nc.labs.validation.*;
-import com.nc.labs.validation.contract.ValidatorContract;
-import com.nc.labs.validation.contract.ValidatorContractCellular;
-import com.nc.labs.validation.contract.ValidatorContractInternet;
-import com.nc.labs.validation.contract.ValidatorContractTV;
 import com.opencsv.bean.CsvToBeanBuilder;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Class for parsing a csv file
  * @author Maksim Shcherbakov
- * @version 1.1
+ * @version 1.2
  */
 public class ReaderCSV {
     /**
      * Object of the ClientRepository class
      */
     private static final ClientRepository clientRepository = new ClientRepository();
+
+    private static List<Validator<? extends Object>> validators = new ArrayList<>();
+    static {
+        validators.add(new IdContractValidator());
+        validators.add(new StartDateValidator());
+        validators.add(new EndDateValidator());
+        validators.add(new NumberContractValidator());
+        validators.add(new IdClientValidator());
+        validators.add(new SurnameValidator());
+        validators.add(new FirstNameValidator());
+        validators.add(new PatronymicValidator());
+        validators.add(new DateOfBirthValidator());
+        validators.add(new GenderValidator());
+        validators.add(new PassportNumberValidator());
+        validators.add(new PassportSeriesValidator());
+        validators.add(new PackageChannelValidator());
+        validators.add(new MinuteValidator());
+        validators.add(new GbInternetValidator());
+        validators.add(new SmsValidator());
+        validators.add(new MaximumSpeedValidator());
+    }
 
     /**
      * This method parses the csv file
@@ -38,8 +59,6 @@ public class ReaderCSV {
             beanBuilder.withType(ContractCSV.class).withSkipLines(1).withIgnoreLeadingWhiteSpace(true);
             beanBuilder.build().parse().forEach(contractCSV -> converting(contractCSV, contractRepository));
 
-            ValidatorContract.clearLine();
-            ValidatorClient.clearLineClient();
         } catch (FileNotFoundException e) {
             System.out.println(e);
         }
@@ -52,9 +71,6 @@ public class ReaderCSV {
      */
     private void converting (ContractCSV contractCSV, Repository<Contract> contractRepository) {
         String[] strings = contractCSV.getAddInfo().split(",");
-        ValidatorContractTV validatorContractTV = new ValidatorContractTV();
-        ValidatorContractCellular validatorContractCellular = new ValidatorContractCellular();
-        ValidatorContractInternet validatorContractInternet = new ValidatorContractInternet();
         Client client = clientRepository.createClient(contractCSV.getIdClient(), contractCSV.getSurname(),
                 contractCSV.getFirstName(), contractCSV.getPatronymic(), contractCSV.getDateOfBirth(),
                 contractCSV.getGender(), contractCSV.getNumberPassport(), contractCSV.getSeriesPassport());
@@ -63,8 +79,7 @@ public class ReaderCSV {
             if (contractCSV.getType() == TypeContract.TV) {
                 TvContract tvContract = createTvContract(contractCSV, client, strings[0]);
 
-                if (tvContract != null &&
-                        ContractStatus.checkStatus(validatorContractTV.check(tvContract))) {
+                if (tvContract != null && validation(tvContract)) {
                     if (contractRepository.getSize() != 0) {
                         if (checkExists(tvContract, contractRepository)) {
                             contractRepository.add(tvContract);
@@ -77,8 +92,7 @@ public class ReaderCSV {
             else if (contractCSV.getType() == TypeContract.Cellular) {
                 CellularContract cellularContract = createCellularContract(contractCSV, client, strings);
 
-                if (cellularContract != null &&
-                        ContractStatus.checkStatus(validatorContractCellular.check(cellularContract))) {
+                if (cellularContract != null && validation(cellularContract)) {
                     if (contractRepository.getSize() != 0) {
                         if (checkExists(cellularContract, contractRepository)) {
                             contractRepository.add(cellularContract);
@@ -90,8 +104,7 @@ public class ReaderCSV {
             else {
                 InternetContract internetContract = createInternetContract(contractCSV, client, strings[0]);
 
-                if (internetContract != null &&
-                        ContractStatus.checkStatus(validatorContractInternet.check(internetContract))) {
+                if (internetContract != null && validation(internetContract)) {
                     if (contractRepository.getSize() != 0) {
                         if (checkExists(internetContract, contractRepository)) {
                             contractRepository.add(internetContract);
@@ -193,5 +206,31 @@ public class ReaderCSV {
         return  contractRepository.search(contract -> contract.getClient() == internetContract.getClient()
                 && contract.getStartDate().equals(internetContract.getStartDate())
                 && contract.getClass().getName().equals(internetContract.getClass().getName())) == null;
+    }
+
+    /**
+     * The method does the validation of the contract
+     * @param contract the contract for validation
+     * @return true - the contract was validated; false - the contract was not validated
+     */
+    private boolean validation (Contract contract){
+        for(Validator validator : validators){
+            if (validator.getClassValidation().equals(Contract.class)){
+                if(validator.validate(contract).getStatus() == Status.ERROR){
+                    return false;
+                }
+            }
+            else if (validator.getClassValidation().equals(contract.getClient().getClass())){
+                if(validator.validate(contract.getClient()).getStatus() == Status.ERROR){
+                    return false;
+                }
+            }
+            else if (validator.getClassValidation().equals(contract.getClass())){
+                if(validator.validate(contract).getStatus() == Status.ERROR){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
