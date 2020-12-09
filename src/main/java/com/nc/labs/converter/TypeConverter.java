@@ -20,9 +20,9 @@ public class TypeConverter extends AbstractBeanField {
      * @throws CsvConstraintViolationException Reports the result of constraint violations.
      */
     @Override
-    protected Object convert(String string) throws CsvDataTypeMismatchException, CsvConstraintViolationException {
-        for(TypeContract typeContract : TypeContract.values()){
-            if(typeContract.name().equals(string)){
+    protected Object convert(final String string) throws CsvDataTypeMismatchException, CsvConstraintViolationException {
+        for (TypeContract typeContract : TypeContract.values()) {
+            if (typeContract.name().equals(string)) {
                 return typeContract;
             }
         }

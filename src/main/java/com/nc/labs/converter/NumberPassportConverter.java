@@ -19,7 +19,7 @@ public class NumberPassportConverter extends AbstractBeanField {
      * @throws CsvConstraintViolationException Reports the result of constraint violations.
      */
     @Override
-    protected Object convert(String string) throws CsvDataTypeMismatchException, CsvConstraintViolationException {
+    protected Object convert(final String string) throws CsvDataTypeMismatchException, CsvConstraintViolationException {
         if (string.matches("\\d{6}")) {
             int parse = Integer.parseInt(string);
             return parse;

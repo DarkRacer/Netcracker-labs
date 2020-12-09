@@ -40,7 +40,7 @@ public class Repository<T> {
      * The method adds a contract to the repository
      * @param contract contract to add
      */
-    public void add(Contract contract) {
+    public void add(final Contract contract) {
         if (check(contract)) {
             if (pointer == (arrayContract.length - 1)) {
                 resize(arrayContract.length + 5);
@@ -48,8 +48,7 @@ public class Repository<T> {
 
             arrayContract[pointer] = contract;
             pointer++;
-        }
-        else {
+        } else {
             System.out.println("Контракт с таким id уже существует");
         }
     }
@@ -58,7 +57,7 @@ public class Repository<T> {
      * The method expands the repository
      * @param newSize the new array size
      */
-    private void resize(int newSize) {
+    private void resize(final int newSize) {
         Contract[] array = new Contract[newSize];
 
         System.arraycopy(arrayContract, 0, array, 0, pointer);
@@ -69,11 +68,11 @@ public class Repository<T> {
      * This method deletes the contract from the repository
      * @param id Contract identifier
      */
-    public void delete(int id) {
+    public void delete(final int id) {
         int index = pointer;
 
-        for (int i = 0; i <= pointer; i++){
-            if(arrayContract[i].getId() == id){
+        for (int i = 0; i <= pointer; i++) {
+            if (arrayContract[i].getId() == id) {
                 arrayContract[i] = null;
                 index = i;
                 break;
@@ -95,9 +94,9 @@ public class Repository<T> {
      * @param id contract identifier
      * @return repository element or null
      */
-    public Contract get(int id) {
-        for (int i = 0; i <= pointer; i++){
-            if(arrayContract[i] != null && arrayContract[i].getId() == id){
+    public Contract get(final int id) {
+        for (int i = 0; i <= pointer; i++) {
+            if (arrayContract[i] != null && arrayContract[i].getId() == id) {
                 return arrayContract[i];
             }
         }
@@ -118,7 +117,7 @@ public class Repository<T> {
      * @param contract contract to add
      * @return check result
      */
-    private boolean check (Contract contract){
+    private boolean check(final Contract contract) {
         if (pointer != 0) {
             for (Contract contract1 : arrayContract) {
                 if (contract1 != null && contract != null) {
@@ -137,13 +136,13 @@ public class Repository<T> {
      * @param criterion search criterion
      * @return found contracts
      */
-    public Contract[] search(Predicate<T> criterion) {
+    public Contract[] search(final Predicate<T> criterion) {
         Contract[] array = new Contract[arrayContract.length];
         int g = 0;
 
         for (Contract contract : arrayContract) {
             if (contract != null) {
-                if (criterion.test((T)contract)) {
+                if (criterion.test((T) contract)) {
                     array[g] = contract;
                     g++;
                 }
@@ -152,14 +151,16 @@ public class Repository<T> {
 
         if (g == 0) {
             return null;
-        } else return array;
+        } else {
+            return array;
+        }
     }
 
     /**
      * This method sorts by criteria
      * @param comparator sorting criterion
      */
-    public void sort(Comparator<T> comparator){
+    public void sort(final Comparator<T> comparator) {
         sorter.sort(arrayContract, comparator);
     }
 }

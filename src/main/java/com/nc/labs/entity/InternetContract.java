@@ -26,7 +26,8 @@ public class InternetContract extends Contract {
      * @param client internet contract client date
      * @param maximumSpeed the maximum speed on the contract
      */
-    public InternetContract(int id, LocalDate startDate, LocalDate endDate, int numberContract, Client client, int maximumSpeed) {
+    public InternetContract(final int id, final LocalDate startDate, final LocalDate endDate, final int numberContract,
+                            final Client client, final int maximumSpeed) {
         super(id, startDate, endDate, numberContract, client);
         this.maximumSpeed = maximumSpeed;
     }
@@ -37,12 +38,12 @@ public class InternetContract extends Contract {
      */
     @Override
     public String toString() {
-        return "Контракт проводного интернета " + "\n" +
-                " id: " + getId() + "\n" +
-                " Дата начала контракта: " + getStartDate() + "\n" +
-                " Дата окончания контракта: " + getEndDate() + "\n" +
-                " Номер контракта: " + getNumberContract() + "\n" +
-                " Максимальная скорость соединения: " + maximumSpeed + "\n" +
-                " Владелец контракта \n" +  getClient().toString();
+        return "Контракт проводного интернета " + "\n"
+                + " id: " + getId() + "\n"
+                + " Дата начала контракта: " + getStartDate() + "\n"
+                + " Дата окончания контракта: " + getEndDate() + "\n"
+                + " Номер контракта: " + getNumberContract() + "\n"
+                + " Максимальная скорость соединения: " + maximumSpeed + "\n"
+                + " Владелец контракта \n" +  getClient().toString();
     }
 }

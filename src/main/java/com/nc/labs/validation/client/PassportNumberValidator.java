@@ -23,22 +23,20 @@ public class PassportNumberValidator implements Validator<Client> {
      * @return validation message
      */
     @Override
-    public Message validate(Client objectForValidation) {
-        if (objectForValidation.getNumberPassport() == 0){
+    public Message validate(final Client objectForValidation) {
+        if (objectForValidation.getNumberPassport() == 0) {
             loggerValidator.error(new Message("This field must only contain numbers",
                     Status.ERROR, "passportNumber"));
 
             return new Message("This field must only contain numbers",
                     Status.ERROR, "passportNumber");
-        }
-        else if (objectForValidation.getNumberPassport() < 0) {
+        } else if (objectForValidation.getNumberPassport() < 0) {
             loggerValidator.error(new Message("This field must only contain positive numbers",
                     Status.ERROR, "passportNumber"));
 
             return new Message("This field must only contain positive numbers",
                     Status.ERROR, "passportNumber");
-        }
-        else {
+        } else {
             loggerValidator.info(new Message(Status.OK, "passportNumber"));
 
             return new Message(Status.OK, "passportNumber");

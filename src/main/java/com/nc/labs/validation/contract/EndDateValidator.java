@@ -23,28 +23,25 @@ public class EndDateValidator implements Validator<Contract> {
      * @return validation message
      */
     @Override
-    public Message validate(Contract objectForValidation) {
-        if (objectForValidation.getEndDate() == null){
+    public Message validate(final Contract objectForValidation) {
+        if (objectForValidation.getEndDate() == null) {
             loggerValidator.error(new Message("This field must contain only the date(DD.MM. YYYY)",
                     Status.ERROR, "endDate"));
 
             return new Message("This field must contain only the date(DD.MM. YYYY)",
                     Status.ERROR, "endDate");
-        }
-        else if(objectForValidation.getStartDate().isAfter(objectForValidation.getEndDate())){
+        } else if (objectForValidation.getStartDate().isAfter(objectForValidation.getEndDate())) {
             loggerValidator.warn(new Message("The date cannot be later than the contract start date",
                     Status.RED_RISK, "endDate"));
 
             return new Message("The date cannot be later than the contract start date",
                     Status.RED_RISK, "endDate");
-        }
-        else if(objectForValidation.getEndDate().equals(objectForValidation.getStartDate())){
+        } else if (objectForValidation.getEndDate().equals(objectForValidation.getStartDate())) {
             loggerValidator.warn(new Message("The end date is equal to the start date",
                     Status.YELLOW_RISK, "endDate"));
 
             return new Message("The end date is equal to the start date", Status.YELLOW_RISK, "endDate");
-        }
-        else {
+        } else {
             loggerValidator.info(new Message(Status.OK, "endDate"));
 
             return new Message(Status.OK, "endDate");

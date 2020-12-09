@@ -23,21 +23,19 @@ public class IdContractValidator implements Validator<Contract> {
      * @return validation message
      */
     @Override
-    public Message validate(Contract objectForValidation) {
-            if (objectForValidation.getId() == 0){
+    public Message validate(final Contract objectForValidation) {
+            if (objectForValidation.getId() == 0) {
                 loggerValidator.error(new Message("This field must only contain numbers",
                         Status.ERROR, "idContract"));
 
                 return new Message("This field must only contain numbers", Status.ERROR, "idContract");
-            }
-            else if (objectForValidation.getId() < 0) {
+            } else if (objectForValidation.getId() < 0) {
                 loggerValidator.error(new Message("This field must only contain positive numbers",
                         Status.ERROR, "idContract"));
 
                 return new Message("This field must only contain positive numbers",
                         Status.ERROR, "idContract");
-            }
-            else {
+            } else {
                 loggerValidator.info(new Message(Status.OK, "idContract"));
 
                 return new Message(Status.OK, "idContract");

@@ -18,8 +18,8 @@ public class InsertionSort<T> implements ISorter<T> {
      * @param comparator Sorting criterion
      */
     @Override
-    public void sort(Contract[] contracts, Comparator<T> comparator) {
-        for (int i = 0; i < contracts.length&& contracts[i] != null; i++) {
+    public void sort(final Contract[] contracts, final Comparator<T> comparator) {
+        for (int i = 0; i < contracts.length && contracts[i] != null; i++) {
             Contract value = contracts[i];
             int j = i - 1;
             for (; j >= 0 && contracts[j] != null; j--) {

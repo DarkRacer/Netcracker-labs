@@ -23,15 +23,14 @@ public class PackageChannelValidator implements Validator<TvContract> {
      * @return validation message
      */
     @Override
-    public Message validate(TvContract objectForValidation) {
-        if (objectForValidation.getPackageChannel() == null){
+    public Message validate(final TvContract objectForValidation) {
+        if (objectForValidation.getPackageChannel() == null) {
             loggerValidator.error(new Message("Channel package is not specified or specified incorrectly",
                     Status.ERROR, "packageChannel"));
 
             return new Message("Channel package is not specified or specified incorrectly",
                     Status.ERROR, "packageChannel");
-        }
-        else {
+        } else {
             loggerValidator.info(new Message(Status.OK, "packageChannel"));
 
             return new Message(Status.OK, "packageChannel");

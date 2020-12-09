@@ -23,21 +23,19 @@ public class IdClientValidator implements Validator<Client> {
      * @return validation message
      */
     @Override
-    public Message validate(Client objectForValidation) {
-        if (objectForValidation.getId() == 0){
+    public Message validate(final Client objectForValidation) {
+        if (objectForValidation.getId() == 0) {
             loggerValidator.error(new Message("This field must only contain numbers",
                     Status.ERROR, "idClient"));
 
             return new Message("This field must only contain numbers", Status.ERROR, "idClient");
-        }
-        else if (objectForValidation.getId() < 0) {
+        } else if (objectForValidation.getId() < 0) {
             loggerValidator.error(new Message("This field must only contain positive numbers",
                     Status.ERROR, "idClient"));
 
             return new Message("This field must only contain positive numbers",
                     Status.ERROR, "idClient");
-        }
-        else {
+        } else {
             loggerValidator.info(new Message(Status.OK, "idClient"));
 
             return new Message(Status.OK, "idClient");

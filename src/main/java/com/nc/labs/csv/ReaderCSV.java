@@ -51,7 +51,7 @@ public class ReaderCSV {
      * @param contractRepository repository where data is entered
      * @param fileName file name
      */
-    public void read(Repository<Contract> contractRepository, String fileName) {
+    public void read(final Repository<Contract> contractRepository, final String fileName) {
         try {
             CsvToBeanBuilder<ContractCSV> beanBuilder = new CsvToBeanBuilder<>(
                     new InputStreamReader(new FileInputStream(fileName)));
@@ -69,7 +69,7 @@ public class ReaderCSV {
      * @param contractCSV data from the file
      * @param contractRepository repository where data is entered
      */
-    private void converting (ContractCSV contractCSV, Repository<Contract> contractRepository) {
+    private void converting(final ContractCSV contractCSV, final Repository<Contract> contractRepository) {
         String[] strings = contractCSV.getAddInfo().split(",");
         Client client = clientRepository.createClient(contractCSV.getIdClient(), contractCSV.getSurname(),
                 contractCSV.getFirstName(), contractCSV.getPatronymic(), contractCSV.getDateOfBirth(),
@@ -84,12 +84,11 @@ public class ReaderCSV {
                         if (checkExists(tvContract, contractRepository)) {
                             contractRepository.add(tvContract);
                         }
+                    } else {
+                        contractRepository.add(tvContract);
                     }
-                    else contractRepository.add(tvContract);
                 }
-
-            }
-            else if (contractCSV.getType() == TypeContract.Cellular) {
+            } else if (contractCSV.getType() == TypeContract.Cellular) {
                 CellularContract cellularContract = createCellularContract(contractCSV, client, strings);
 
                 if (cellularContract != null && validation(cellularContract)) {
@@ -97,11 +96,11 @@ public class ReaderCSV {
                         if (checkExists(cellularContract, contractRepository)) {
                             contractRepository.add(cellularContract);
                         }
+                    } else {
+                        contractRepository.add(cellularContract);
                     }
-                    else contractRepository.add(cellularContract);
                 }
-            }
-            else {
+            } else {
                 InternetContract internetContract = createInternetContract(contractCSV, client, strings[0]);
 
                 if (internetContract != null && validation(internetContract)) {
@@ -109,8 +108,9 @@ public class ReaderCSV {
                         if (checkExists(internetContract, contractRepository)) {
                             contractRepository.add(internetContract);
                         }
+                    } else {
+                        contractRepository.add(internetContract);
                     }
-                    else contractRepository.add(internetContract);
                 }
             }
         }
@@ -123,8 +123,8 @@ public class ReaderCSV {
      * @param string channel package
      * @return tv contract or null
      */
-    private TvContract createTvContract(ContractCSV contractCSV, Client client, String string){
-        for(PackageChannel packageChannel : PackageChannel.values()) {
+    private TvContract createTvContract(final ContractCSV contractCSV, final Client client, final String string) {
+        for (PackageChannel packageChannel : PackageChannel.values()) {
             if (packageChannel.name().equals(string)) {
                 return new TvContract(contractCSV.getId(), contractCSV.getStartDate(),
                         contractCSV.getEndDate(), contractCSV.getNumberContract(), client, packageChannel);
@@ -140,7 +140,8 @@ public class ReaderCSV {
      * @param strings additional information about the cellular contract
      * @return cellular contract or null
      */
-    private CellularContract createCellularContract(ContractCSV contractCSV, Client client, String[] strings) {
+    private CellularContract createCellularContract(final ContractCSV contractCSV, final Client client,
+                                                    final String[] strings) {
         for (String string : strings) {
             if (string.matches("\\d+")) {
                 int minutes = Integer.parseInt(strings[0]);
@@ -161,7 +162,8 @@ public class ReaderCSV {
      * @param string the maximum speed on the contract
      * @return internet contract or null
      */
-    private InternetContract createInternetContract(ContractCSV contractCSV, Client client, String string){
+    private InternetContract createInternetContract(final ContractCSV contractCSV, final Client client,
+                                                    final String string) {
         if (string.matches("\\d+")) {
             int maximumSpeed = Integer.parseInt(string);
 
@@ -177,9 +179,9 @@ public class ReaderCSV {
      * @param contractRepository the repository where it is checked
      * @return true - does not exist or false - exists
      */
-    private boolean checkExists(TvContract tvContract, Repository<Contract> contractRepository){
-        return  tvContract != null &&
-                contractRepository.search(contract -> contract.getClient() == tvContract.getClient()
+    private boolean checkExists(final TvContract tvContract, final Repository<Contract> contractRepository) {
+        return  tvContract != null
+                && contractRepository.search(contract -> contract.getClient() == tvContract.getClient()
                         && contract.getStartDate().equals(tvContract.getStartDate())
                         && contract.getClass().getName().equals(tvContract.getClass().getName())) == null;
     }
@@ -190,7 +192,7 @@ public class ReaderCSV {
      * @param contractRepository the repository where it is checked
      * @return true - does not exist or false - exists
      */
-    private boolean checkExists(CellularContract cellularContract, Repository<Contract> contractRepository){
+    private boolean checkExists(final CellularContract cellularContract, final Repository<Contract> contractRepository) {
         return  contractRepository.search(contract -> contract.getClient() == cellularContract.getClient()
                 && contract.getStartDate().equals(cellularContract.getStartDate())
                 && contract.getClass().getName().equals(cellularContract.getClass().getName())) == null;
@@ -202,7 +204,7 @@ public class ReaderCSV {
      * @param contractRepository the repository where it is checked
      * @return true - does not exist or false - exists
      */
-    private boolean checkExists(InternetContract internetContract, Repository<Contract> contractRepository){
+    private boolean checkExists(final InternetContract internetContract, final Repository<Contract> contractRepository) {
         return  contractRepository.search(contract -> contract.getClient() == internetContract.getClient()
                 && contract.getStartDate().equals(internetContract.getStartDate())
                 && contract.getClass().getName().equals(internetContract.getClass().getName())) == null;
@@ -213,20 +215,18 @@ public class ReaderCSV {
      * @param contract the contract for validation
      * @return true - the contract was validated; false - the contract was not validated
      */
-    private boolean validation (Contract contract){
-        for(Validator validator : validators){
-            if (validator.getClassValidation().equals(Contract.class)){
-                if(validator.validate(contract).getStatus() == Status.ERROR){
+    private boolean validation(final Contract contract) {
+        for (Validator validator : validators) {
+            if (validator.getClassValidation().equals(Contract.class)) {
+                if (validator.validate(contract).getStatus() == Status.ERROR) {
                     return false;
                 }
-            }
-            else if (validator.getClassValidation().equals(contract.getClient().getClass())){
-                if(validator.validate(contract.getClient()).getStatus() == Status.ERROR){
+            } else if (validator.getClassValidation().equals(contract.getClient().getClass())) {
+                if (validator.validate(contract.getClient()).getStatus() == Status.ERROR) {
                     return false;
                 }
-            }
-            else if (validator.getClassValidation().equals(contract.getClass())){
-                if(validator.validate(contract).getStatus() == Status.ERROR){
+            } else if (validator.getClassValidation().equals(contract.getClass())) {
+                if (validator.validate(contract).getStatus() == Status.ERROR) {
                     return false;
                 }
             }

@@ -25,23 +25,21 @@ public class StartDateValidator implements Validator<Contract> {
      * @return validation message
      */
     @Override
-    public Message validate(Contract objectForValidation) {
-        if (objectForValidation.getStartDate() == null){
+    public Message validate(final Contract objectForValidation) {
+        if (objectForValidation.getStartDate() == null) {
             loggerValidator.error(new Message("This field must contain only the date(DD.MM. YYYY)",
                     Status.ERROR, "startDate"));
 
             return new Message("This field must contain only the date(DD.MM. YYYY)",
                     Status.ERROR, "startDate");
-        }
-        else if(objectForValidation.getStartDate().isAfter(LocalDate.now())
-                || objectForValidation.getStartDate().equals(LocalDate.now())){
+        } else if (objectForValidation.getStartDate().isAfter(LocalDate.now())
+                || objectForValidation.getStartDate().equals(LocalDate.now())) {
             loggerValidator.warn(new Message("The date cannot be later than the date that is today",
                     Status.RED_RISK, "startDate"));
 
             return new Message("The date cannot be later than the date that is today",
                     Status.RED_RISK, "startDate");
-        }
-        else {
+        } else {
             loggerValidator.info(new Message(Status.OK, "startDate"));
             return new Message(Status.OK, "startDate");
         }

@@ -8,13 +8,18 @@ import java.time.LocalDate;
 /**
  * This class describes a repository for storing various clients
  * @author Maksim Shcherbakov
- * @version 1.0
+ * @version 1.1
  */
 public class ClientRepository {
     /**
+     * The initial size of the array
+     */
+    private static final int size = 10;
+
+    /**
      * Array for storing clients
      */
-    private static Client[] arrayClient = new Client[10];
+    private static Client[] arrayClient = new Client[size];
 
     /**
      * Number of clients added
@@ -33,8 +38,9 @@ public class ClientRepository {
      * @param seriesPassport seriesPassport client
      * @return new client or existing one
      */
-    public Client createClient(int id, String surname, String firstName, String patronymic, LocalDate dateOfBirth,
-                               Gender gender, int numberPassport, int seriesPassport) {
+    public Client createClient(final int id, final String surname, final String firstName, final String patronymic,
+                               final LocalDate dateOfBirth, final Gender gender, final int numberPassport,
+                               final int seriesPassport) {
         Client client = new Client(id, surname, firstName, patronymic, dateOfBirth, gender,
                 numberPassport, seriesPassport);
 
@@ -49,19 +55,16 @@ public class ClientRepository {
                     arrayClient[pointer] = client;
                     pointer++;
                     return client;
-                }
-                else {
+                } else {
                     return client1;
                 }
-            }
-            else {
+            } else {
                 arrayClient[pointer] = client;
                 pointer++;
 
                 return client;
             }
     }
-
 
     /**
      * The method expands the repository
@@ -78,15 +81,15 @@ public class ClientRepository {
      * @param client the client to check
      * @return client in repository or null
      */
-    public Client check(Client client) {
+    public Client check(final Client client) {
 
         for (Client client1 : arrayClient) {
-            if (client1 != null)
-            if (client1.getNumberPassport() == client.getNumberPassport()
-                    && client1.getSeriesPassport() == client.getSeriesPassport()) {
-                return client1;
+            if (client1 != null) {
+                if (client1.getNumberPassport() == client.getNumberPassport()
+                        && client1.getSeriesPassport() == client.getSeriesPassport()) {
+                    return client1;
+                }
             }
-
         }
         return null;
     }

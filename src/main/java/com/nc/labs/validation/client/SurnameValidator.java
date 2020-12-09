@@ -23,21 +23,19 @@ public class SurnameValidator implements Validator<Client> {
      * @return validation message
      */
     @Override
-    public Message validate(Client objectForValidation) {
-        if (objectForValidation.getSurname() == null){
+    public Message validate(final Client objectForValidation) {
+        if (objectForValidation.getSurname() == null) {
             loggerValidator.error(new Message("The surname field must not be empty",
                     Status.ERROR, "surname"));
 
             return new Message("The surname field must not be empty", Status.ERROR, "surname");
-        }
-        else if (objectForValidation.getSurname().matches("\\d+")) {
+        } else if (objectForValidation.getSurname().matches("\\d+")) {
             loggerValidator.warn(new Message("The surname field must not contain numbers",
                     Status.RED_RISK, "surname"));
 
             return new Message("The surname field must not contain numbers",
                     Status.RED_RISK, "surname");
-        }
-        else {
+        } else {
             loggerValidator.info(new Message(Status.OK, "surname"));
 
             return new Message(Status.OK, "surname");

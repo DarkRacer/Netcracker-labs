@@ -22,8 +22,8 @@ public class LocalDateConverter extends AbstractBeanField {
      * @throws CsvConstraintViolationException Reports the result of constraint violations.
      */
     @Override
-    protected Object convert(String string) throws CsvDataTypeMismatchException, CsvConstraintViolationException {
-        if(string.matches("\\d{2}\\.\\d{2}\\.\\d{4}")) {
+    protected Object convert(final String string) throws CsvDataTypeMismatchException, CsvConstraintViolationException {
+        if (string.matches("\\d{2}\\.\\d{2}\\.\\d{4}")) {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
             LocalDate parse = LocalDate.parse(string, formatter);
             return parse;

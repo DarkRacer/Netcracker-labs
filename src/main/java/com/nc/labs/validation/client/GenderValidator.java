@@ -23,14 +23,13 @@ public class GenderValidator implements Validator<Client> {
      * @return validation message
      */
     @Override
-    public Message validate(Client objectForValidation) {
-        if (objectForValidation.getGender() == null){
+    public Message validate(final Client objectForValidation) {
+        if (objectForValidation.getGender() == null) {
             loggerValidator.error(new Message("Gender is not specified or specified incorrectly",
                     Status.ERROR, "gender"));
 
             return new Message("Gender is not specified or specified incorrectly", Status.ERROR, "gender");
-        }
-        else {
+        } else {
             loggerValidator.info(new Message(Status.OK, "gender"));
 
             return new Message(Status.OK, "gender");

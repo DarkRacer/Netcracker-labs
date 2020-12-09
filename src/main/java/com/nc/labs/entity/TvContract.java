@@ -28,7 +28,8 @@ public class TvContract extends Contract {
      * @param client tv contract client date
      * @param packageChannel contract channel package
      */
-    public TvContract(int id, LocalDate startDate, LocalDate endDate, int numberContract, Client client, PackageChannel packageChannel) {
+    public TvContract(final int id, final LocalDate startDate, final LocalDate endDate, final int numberContract,
+                      final Client client, final PackageChannel packageChannel) {
         super(id, startDate, endDate, numberContract, client);
         this.packageChannel = packageChannel;
     }
@@ -39,12 +40,11 @@ public class TvContract extends Contract {
      */
     @Override
     public String toString() {
-        return "Контракт цифрового телевидения " + "\n" +
-                " id: " + getId() + "\n" +
-                " Дата начала контракта: " + getStartDate() + "\n" +
-                " Дата окончания контракта: " + getEndDate() + "\n" +
-                " Номер контракта: " + getNumberContract() + "\n" +
-                " Пакет каналов: " + packageChannel + "\n" +
-                " Владелец контракта \n" +  getClient().toString();
+        return "Контракт цифрового телевидения " + "\n" + " id: " + getId() + "\n"
+                + " Дата начала контракта: " + getStartDate() + "\n"
+                + " Дата окончания контракта: " + getEndDate() + "\n"
+                + " Номер контракта: " + getNumberContract() + "\n"
+                + " Пакет каналов: " + packageChannel + "\n"
+                + " Владелец контракта \n" +  getClient().toString();
     }
 }

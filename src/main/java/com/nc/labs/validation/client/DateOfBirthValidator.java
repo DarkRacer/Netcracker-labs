@@ -25,23 +25,21 @@ public class DateOfBirthValidator implements Validator<Client> {
      * @return validation message
      */
     @Override
-    public Message validate(Client objectForValidation) {
-        if (objectForValidation.getDateOfBirth() == null){
+    public Message validate(final Client objectForValidation) {
+        if (objectForValidation.getDateOfBirth() == null) {
             loggerValidator.error(new Message("This field must contain only the date(DD.MM. YYYY)",
                     Status.ERROR, "dateOfBirth"));
 
             return new Message("This field must contain only the date(DD.MM. YYYY)",
                     Status.ERROR, "dateOfBirth");
-        }
-        else if(objectForValidation.getDateOfBirth().isAfter(LocalDate.now())
-                || objectForValidation.getDateOfBirth().equals(LocalDate.now())){
+        } else if (objectForValidation.getDateOfBirth().isAfter(LocalDate.now())
+                || objectForValidation.getDateOfBirth().equals(LocalDate.now())) {
             loggerValidator.warn(new Message("The date cannot be later than the date that is today",
                     Status.RED_RISK, "dateOfBirth"));
 
             return new Message("The date cannot be later than the date that is today",
                     Status.RED_RISK, "dateOfBirth");
-        }
-        else {
+        } else {
             loggerValidator.info(new Message(Status.OK, "dateOfBirth"));
 
             return new Message(Status.OK, "dateOfBirth");

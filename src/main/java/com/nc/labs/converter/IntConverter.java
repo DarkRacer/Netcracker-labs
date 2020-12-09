@@ -19,8 +19,8 @@ public class IntConverter extends AbstractBeanField {
      * @throws CsvConstraintViolationException Reports the result of constraint violations.
      */
     @Override
-    protected Object convert(String string) throws CsvDataTypeMismatchException, CsvConstraintViolationException {
-        if(string.matches("\\d+")) {
+    protected Object convert(final String string) throws CsvDataTypeMismatchException, CsvConstraintViolationException {
+        if (string.matches("\\d+")) {
             int parse = Integer.parseInt(string);
             return parse;
         }

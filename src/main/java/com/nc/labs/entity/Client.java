@@ -75,14 +75,13 @@ public class Client {
      */
     @Override
     public String toString() {
-        return  "   id: " + id + "\n" +
-                "   Фамилия: " + surname + "\n" +
-                "   Имя: " + firstName + "\n" +
-                "   Отчество: " + patronymic + "\n" +
-                "   Дата рождения: " + dateOfBirth + "\n" +
-                "   Пол: " + gender + "\n" +
-                "   Номер паспорта: " + numberPassport + "\n" +
-                "   Серия паспорта: " + seriesPassport
-                ;
+        return  "   id: " + id + "\n"
+                + "   Фамилия: " + surname + "\n"
+                + "   Имя: " + firstName + "\n"
+                + "   Отчество: " + patronymic + "\n"
+                + "   Дата рождения: " + dateOfBirth + "\n"
+                + "   Пол: " + gender + "\n"
+                + "   Номер паспорта: " + numberPassport + "\n"
+                + "   Серия паспорта: " + seriesPassport;
     }
 }

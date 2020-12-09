@@ -20,9 +20,9 @@ public class GenderConverter extends AbstractBeanField {
      * @throws CsvConstraintViolationException Reports the result of constraint violations.
      */
     @Override
-    protected Object convert(String string) throws CsvDataTypeMismatchException, CsvConstraintViolationException {
-        for(Gender gender : Gender.values()){
-            if(gender.name().equals(string)){
+    protected Object convert(final String string) throws CsvDataTypeMismatchException, CsvConstraintViolationException {
+        for (Gender gender : Gender.values()) {
+            if (gender.name().equals(string)) {
                 return gender;
             }
         }

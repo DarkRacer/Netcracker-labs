@@ -23,21 +23,19 @@ public class PassportSeriesValidator implements Validator<Client> {
      * @return validation message
      */
     @Override
-    public Message validate(Client objectForValidation) {
-        if (objectForValidation.getSeriesPassport() == 0){
+    public Message validate(final Client objectForValidation) {
+        if (objectForValidation.getSeriesPassport() == 0) {
             loggerValidator.error(new Message("This field must only contain numbers",
                     Status.ERROR, "passportSeries"));
 
             return new Message("This field must only contain numbers", Status.ERROR, "passportSeries");
-        }
-        else if (objectForValidation.getSeriesPassport() < 0) {
+        } else if (objectForValidation.getSeriesPassport() < 0) {
             loggerValidator.error(new Message("This field must only contain positive numbers",
                     Status.ERROR, "passportSeries"));
 
             return new Message("This field must only contain positive numbers",
                     Status.ERROR, "passportSeries");
-        }
-        else {
+        } else {
             loggerValidator.info(new Message(Status.OK, "passportSeries"));
 
             return new Message(Status.OK, "passportSeries");

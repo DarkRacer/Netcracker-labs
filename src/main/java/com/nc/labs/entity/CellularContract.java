@@ -39,7 +39,8 @@ public class CellularContract extends Contract {
      * @param gbInternet GB Internet under contract
      * @param sms SMS under contract
      */
-    public CellularContract(int id, LocalDate startDate, LocalDate endDate, int numberContract, Client client, int minutes, int gbInternet, int sms) {
+    public CellularContract(final int id, final LocalDate startDate, final LocalDate endDate, final int numberContract,
+                            final Client client, final int minutes, final int gbInternet, final int sms) {
         super(id, startDate, endDate, numberContract, client);
         this.minutes = minutes;
         this.gbInternet = gbInternet;
@@ -52,14 +53,14 @@ public class CellularContract extends Contract {
      */
     @Override
     public String toString() {
-        return "Контракт сотовой связи " + "\n" +
-                " id: " + getId() + "\n" +
-                " Дата начала контракта: " + getStartDate() + "\n" +
-                " Дата окончания контракта: " + getEndDate() + "\n" +
-                " Номер контракта: " + getNumberContract() + "\n" +
-                " Количество минут: " + minutes + "\n" +
-                " SMS: " + sms + "\n" +
-                " GB Internet: " + gbInternet + "\n" +
-                " Владелец контракта \n" +  getClient().toString();
+        return "Контракт сотовой связи " + "\n"
+                + " id: " + getId() + "\n"
+                + " Дата начала контракта: " + getStartDate() + "\n"
+                + " Дата окончания контракта: " + getEndDate() + "\n"
+                + " Номер контракта: " + getNumberContract() + "\n"
+                + " Количество минут: " + minutes + "\n"
+                + " SMS: " + sms + "\n"
+                + " GB Internet: " + gbInternet + "\n"
+                + " Владелец контракта \n" +  getClient().toString();
     }
 }

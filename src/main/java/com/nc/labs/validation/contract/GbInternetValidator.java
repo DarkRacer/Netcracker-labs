@@ -23,20 +23,18 @@ public class GbInternetValidator implements Validator<CellularContract> {
      * @return validation message
      */
     @Override
-    public Message validate(CellularContract objectForValidation) {
-        if (objectForValidation.getGbInternet() == 0){
+    public Message validate(final CellularContract objectForValidation) {
+        if (objectForValidation.getGbInternet() == 0) {
             loggerValidator.error(new Message("This field must only contain numbers",
                     Status.ERROR, "gbInternet"));
 
             return new Message("This field must only contain numbers", Status.ERROR, "gbInternet");
-        }
-        else if (objectForValidation.getGbInternet() < 0) {
+        } else if (objectForValidation.getGbInternet() < 0) {
             loggerValidator.error(new Message("This field must only contain positive numbers",
                     Status.ERROR, "gbInternet"));
 
             return new Message("This field must only contain positive numbers", Status.ERROR, "gbInternet");
-        }
-        else {
+        } else {
             loggerValidator.info(new Message(Status.OK, "gbInternet"));
 
             return new Message(Status.OK, "gbInternet");

@@ -23,19 +23,17 @@ public class SmsValidator implements Validator<CellularContract> {
      * @return validation message
      */
     @Override
-    public Message validate(CellularContract objectForValidation) {
-        if (objectForValidation.getSms() == 0){
+    public Message validate(final CellularContract objectForValidation) {
+        if (objectForValidation.getSms() == 0) {
             loggerValidator.error(new Message("This field must only contain numbers", Status.ERROR, "sms"));
 
             return new Message("This field must only contain numbers", Status.ERROR, "sms");
-        }
-        else if (objectForValidation.getSms() < 0) {
+        } else if (objectForValidation.getSms() < 0) {
             loggerValidator.error(new Message("This field must only contain positive numbers",
                     Status.ERROR, "sms"));
 
             return new Message("This field must only contain positive numbers", Status.ERROR, "sms");
-        }
-        else {
+        } else {
             loggerValidator.info(new Message(Status.OK, "sms"));
             return new Message(Status.OK, "sms");
         }

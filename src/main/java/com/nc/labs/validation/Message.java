@@ -34,7 +34,7 @@ public class Message {
      * @param status the validation status
      * @param field validation field
      */
-    public Message(Status status, String field){
+    public Message(final Status status, final String field) {
         this.status = status;
         this.field = field;
     }
@@ -45,8 +45,8 @@ public class Message {
      */
     @Override
     public String toString() {
-        return  "Status: " + status +
-                " Message: " + message +
-                " Field: " + field;
+        return  "Status: " + status
+                + " Message: " + message
+                + " Field: " + field;
     }
 }

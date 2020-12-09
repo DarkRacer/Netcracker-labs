@@ -23,21 +23,19 @@ public class MaximumSpeedValidator implements Validator<InternetContract> {
      * @return validation message
      */
     @Override
-    public Message validate(InternetContract objectForValidation) {
-        if (objectForValidation.getMaximumSpeed() == 0){
+    public Message validate(final InternetContract objectForValidation) {
+        if (objectForValidation.getMaximumSpeed() == 0) {
             loggerValidator.error(new Message("This field must only contain numbers",
                     Status.ERROR, "maximumSpeed"));
 
             return new Message("This field must only contain numbers", Status.ERROR, "maximumSpeed");
-        }
-        else if (objectForValidation.getMaximumSpeed() < 0) {
+        } else if (objectForValidation.getMaximumSpeed() < 0) {
             loggerValidator.error(new Message("This field must only contain positive numbers",
                     Status.ERROR, "maximumSpeed"));
 
             return new Message("This field must only contain positive numbers",
                     Status.ERROR, "maximumSpeed");
-        }
-        else {
+        } else {
             loggerValidator.info(new Message(Status.OK, "maximumSpeed"));
 
             return new Message(Status.OK, "maximumSpeed");

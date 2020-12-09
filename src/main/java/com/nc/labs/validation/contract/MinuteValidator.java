@@ -23,20 +23,18 @@ public class MinuteValidator implements Validator<CellularContract> {
      * @return validation message
      */
     @Override
-    public Message validate(CellularContract objectForValidation) {
-        if (objectForValidation.getMinutes() == 0){
+    public Message validate(final CellularContract objectForValidation) {
+        if (objectForValidation.getMinutes() == 0) {
             loggerValidator.error(new Message("This field must only contain numbers",
                     Status.ERROR, "minute"));
 
             return new Message("This field must only contain numbers", Status.ERROR, "minute");
-        }
-        else if (objectForValidation.getMinutes() < 0) {
+        } else if (objectForValidation.getMinutes() < 0) {
             loggerValidator.error(new Message("This field must only contain positive numbers",
                     Status.ERROR, "minute"));
 
             return new Message("This field must only contain positive numbers", Status.ERROR, "minute");
-        }
-        else {
+        } else {
             loggerValidator.info(new Message(Status.OK, "minute"));
 
             return new Message(Status.OK, "minute");

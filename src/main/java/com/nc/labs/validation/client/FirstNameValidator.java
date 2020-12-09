@@ -23,21 +23,19 @@ public class FirstNameValidator implements Validator<Client> {
      * @return validation message
      */
     @Override
-    public Message validate(Client objectForValidation) {
-        if (objectForValidation.getFirstName() == null){
+    public Message validate(final Client objectForValidation) {
+        if (objectForValidation.getFirstName() == null) {
             loggerValidator.error(new Message("The firstName field must not be empty",
                     Status.ERROR, "firstName"));
 
             return new Message("The firstName field must not be empty", Status.ERROR, "firstName");
-        }
-        else if (objectForValidation.getFirstName().matches("\\d+")) {
+        } else if (objectForValidation.getFirstName().matches("\\d+")) {
             loggerValidator.warn(new Message("The firstName field must not contain numbers",
                     Status.RED_RISK, "firstName"));
 
             return new Message("The firstName field must not contain numbers",
                     Status.RED_RISK, "firstName");
-        }
-        else {
+        } else {
             loggerValidator.info(new Message(Status.OK, "firstName"));
 
             return new Message(Status.OK, "firstName");
