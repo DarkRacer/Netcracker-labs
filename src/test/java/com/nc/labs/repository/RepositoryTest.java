@@ -1,5 +1,6 @@
 package com.nc.labs.repository;
 
+import com.nc.labs.di.Injector;
 import com.nc.labs.entity.*;
 import com.nc.labs.enums.Gender;
 import com.nc.labs.enums.PackageChannel;
@@ -17,16 +18,23 @@ import java.util.List;
  * @version 1.4
  */
 public class RepositoryTest {
+    Injector injector = new Injector();
     /**
      * Object of the Repository class
      */
-    private final Repository<Contract> contractRepository = new Repository<>();
+    private Repository<Contract> contractRepository;
 
     /**
      * The initial conditions for the tests
      */
     @Before
     public void setUp() {
+        try {
+            contractRepository = injector.inject(new Repository<>());
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
         Client client1 = new Client(1, "Иванов", "Иван", "Иванович",
                 LocalDate.of(1986, 2, 12), Gender.MALE, 2013, 892314);
         Client client2 = new Client(2, "Петров", "Пётр", "Петрович",
@@ -226,16 +234,6 @@ public class RepositoryTest {
         actual.add(1);
 
         Contract[] array = contractRepository.search(contractSearch -> contractSearch.getId() > -1);
-        for(int i = 0; i < array.length && array[i] != null; i++)
-            expected.add(array[i].getId());
-
-        contractRepository.sort((Contract contract1, Contract contract2) -> new Integer(contract1.getId()).compareTo(new Integer(contract2.getId())));
-
-        actual.add(1);
-        actual.add(2);
-        actual.add(3);
-
-        array = contractRepository.search(contractSearch -> contractSearch.getId() > -1);
         for(int i = 0; i < array.length && array[i] != null; i++)
             expected.add(array[i].getId());
 

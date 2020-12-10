@@ -1,8 +1,10 @@
 package com.nc.labs.csv;
 
-import com.nc.labs.entity.Contract;
+import com.nc.labs.di.Injector;
+import com.nc.labs.entity.*;
 import com.nc.labs.repository.Repository;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -14,10 +16,24 @@ import java.util.List;
  * @version 1.0
  */
 public class ReaderCSVTest {
+    private Injector injector = new Injector();
     /**
      * Object of the Repository class
      */
-    private final Repository<Contract> contractRepository = new Repository<>();
+    private Repository<Contract> contractRepository;
+
+    /**
+     * The initial conditions for the tests
+     */
+    @Before
+    public void setUp() {
+        try {
+            ReaderCSV readerCSV = injector.inject(new ReaderCSV());
+            contractRepository = injector.inject(new Repository<>());
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * This method checks whether the parsing is correct

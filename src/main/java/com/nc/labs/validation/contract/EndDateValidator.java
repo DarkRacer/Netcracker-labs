@@ -30,7 +30,8 @@ public class EndDateValidator implements Validator<Contract> {
 
             return new Message("This field must contain only the date(DD.MM. YYYY)",
                     Status.ERROR, "endDate");
-        } else if (objectForValidation.getStartDate().isAfter(objectForValidation.getEndDate())) {
+        } else if (objectForValidation.getStartDate() == null
+                || objectForValidation.getStartDate().isAfter(objectForValidation.getEndDate())) {
             loggerValidator.warn(new Message("The date cannot be later than the contract start date",
                     Status.RED_RISK, "endDate"));
 

@@ -1,7 +1,7 @@
 package com.nc.labs.repository;
 
+import com.nc.labs.di.Inject;
 import com.nc.labs.entity.Contract;
-import com.nc.labs.sort.BubbleSort;
 import com.nc.labs.sort.ISorter;
 import lombok.NoArgsConstructor;
 
@@ -34,7 +34,8 @@ public class Repository<T> {
     /**
      * Sorting algorithm
      */
-    private ISorter sorter = new BubbleSort();
+    @Inject
+    private ISorter sorter;
 
     /**
      * The method adds a contract to the repository

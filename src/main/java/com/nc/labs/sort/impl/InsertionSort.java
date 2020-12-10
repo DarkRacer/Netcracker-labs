@@ -1,6 +1,7 @@
-package com.nc.labs.sort;
+package com.nc.labs.sort.impl;
 
 import com.nc.labs.entity.Contract;
+import com.nc.labs.sort.ISorter;
 
 import java.util.Comparator;
 

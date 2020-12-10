@@ -1,23 +1,21 @@
 package com.nc.labs.csv;
 
+import com.nc.labs.di.Inject;
 import com.nc.labs.entity.*;
 import com.nc.labs.enums.PackageChannel;
 import com.nc.labs.enums.Status;
 import com.nc.labs.enums.TypeContract;
 import com.nc.labs.validation.Validator;
-import com.nc.labs.validation.client.*;
-import com.nc.labs.validation.contract.*;
 import com.nc.labs.repository.ClientRepository;
 import com.nc.labs.repository.Repository;
 import com.opencsv.bean.CsvToBeanBuilder;
 import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Class for parsing a csv file
  * @author Maksim Shcherbakov
- * @version 1.2
+ * @version 1.3
  */
 public class ReaderCSV {
     /**
@@ -25,26 +23,11 @@ public class ReaderCSV {
      */
     private static final ClientRepository clientRepository = new ClientRepository();
 
-    private static List<Validator<? extends Object>> validators = new ArrayList<>();
-    static {
-        validators.add(new IdContractValidator());
-        validators.add(new StartDateValidator());
-        validators.add(new EndDateValidator());
-        validators.add(new NumberContractValidator());
-        validators.add(new IdClientValidator());
-        validators.add(new SurnameValidator());
-        validators.add(new FirstNameValidator());
-        validators.add(new PatronymicValidator());
-        validators.add(new DateOfBirthValidator());
-        validators.add(new GenderValidator());
-        validators.add(new PassportNumberValidator());
-        validators.add(new PassportSeriesValidator());
-        validators.add(new PackageChannelValidator());
-        validators.add(new MinuteValidator());
-        validators.add(new GbInternetValidator());
-        validators.add(new SmsValidator());
-        validators.add(new MaximumSpeedValidator());
-    }
+    /**
+     * List of validators
+     */
+    @Inject
+    private static List<Validator> validators;
 
     /**
      * This method parses the csv file
