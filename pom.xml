@@ -17,6 +17,10 @@
         <log4j>1.2.17</log4j>
         <postgresql>42.2.20</postgresql>
         <ibatis-core>3.0</ibatis-core>
+        <jaxb-api>2.3.1</jaxb-api>
+        <jaxb-core>3.0.0-M4</jaxb-core>
+        <jaxb-impl>2.1</jaxb-impl>
+        <activation>1.1.1</activation>
         <maven-checkstyle-plugin>3.1.1</maven-checkstyle-plugin>
         <maven-project-info-reports-plugin>2.9</maven-project-info-reports-plugin>
     </properties>
@@ -89,6 +93,31 @@
             <groupId>org.apache.ibatis</groupId>
             <artifactId>ibatis-core</artifactId>
             <version>${ibatis-core}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>${jaxb-api}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-core</artifactId>
+            <version>${jaxb-core}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.xml</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>${jaxb-impl}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+            <version>${activation}</version>
         </dependency>
 
     </dependencies>

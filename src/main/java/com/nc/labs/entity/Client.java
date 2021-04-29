@@ -1,12 +1,16 @@
 package com.nc.labs.entity;
 
 import com.nc.labs.enums.Gender;
+import com.nc.labs.xml.DatedAdapter;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Date;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
@@ -20,6 +24,8 @@ import java.time.format.DateTimeFormatter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@XmlRootElement(name = "client")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Client {
     /**
      * Client identifier
@@ -44,6 +50,7 @@ public class Client {
     /**
      * Client date of birth
      */
+    @XmlJavaTypeAdapter(DatedAdapter.class)
     private LocalDate dateOfBirth;
 
     /**

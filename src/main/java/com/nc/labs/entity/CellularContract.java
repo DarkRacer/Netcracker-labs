@@ -1,8 +1,13 @@
 package com.nc.labs.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -13,6 +18,8 @@ import java.time.format.DateTimeFormatter;
  */
 @Setter
 @Getter
+@NoArgsConstructor
+@XmlAccessorType(XmlAccessType.FIELD)
 public class CellularContract extends Contract {
     /**
      * Minutes under contract

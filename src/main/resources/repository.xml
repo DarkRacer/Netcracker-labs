@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<repository>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tvContract">
+        <id>1</id>
+        <startDate value="2020-10-23"/>
+        <endDate value="2021-10-23"/>
+        <numberContract>2343</numberContract>
+        <client>
+            <id>1</id>
+            <surname>Ivanov</surname>
+            <firstName>Ivan</firstName>
+            <patronymic>Ivanovich</patronymic>
+            <dateOfBirth value="1986-02-12"/>
+            <gender>MALE</gender>
+            <numberPassport>892314</numberPassport>
+            <seriesPassport>2013</seriesPassport>
+        </client>
+        <packageChannel>PLUS</packageChannel>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="internetContract">
+        <id>2</id>
+        <startDate value="2020-10-26"/>
+        <endDate value="2021-10-26"/>
+        <numberContract>12384</numberContract>
+        <client>
+            <id>2</id>
+            <surname>Petrov</surname>
+            <firstName>Petr</firstName>
+            <patronymic>Petrovich</patronymic>
+            <dateOfBirth value="1975-04-27"/>
+            <gender>MALE</gender>
+            <numberPassport>853242</numberPassport>
+            <seriesPassport>2012</seriesPassport>
+        </client>
+        <maximumSpeed>500</maximumSpeed>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cellularContract">
+        <id>3</id>
+        <startDate value="2020-02-14"/>
+        <endDate value="2021-02-14"/>
+        <numberContract>562</numberContract>
+        <client>
+            <id>3</id>
+            <surname>Stepanova</surname>
+            <firstName>Maria</firstName>
+            <patronymic>Stepanova</patronymic>
+            <dateOfBirth value="1991-07-01"/>
+            <gender>FEMALE</gender>
+            <numberPassport>832424</numberPassport>
+            <seriesPassport>2013</seriesPassport>
+        </client>
+        <minutes>1000</minutes>
+        <gbInternet>50</gbInternet>
+        <sms>100</sms>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tvContract">
+        <id>4</id>
+        <startDate value="2020-12-16"/>
+        <endDate value="2020-12-16"/>
+        <numberContract>384539</numberContract>
+        <client>
+            <id>4</id>
+            <surname>Sidorova</surname>
+            <firstName>Svetlana</firstName>
+            <patronymic>Ivanovna</patronymic>
+            <dateOfBirth value="1982-05-19"/>
+            <gender>FEMALE</gender>
+            <numberPassport>835621</numberPassport>
+            <seriesPassport>2014</seriesPassport>
+        </client>
+        <packageChannel>DEFAULT</packageChannel>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="internetContract">
+        <id>5</id>
+        <startDate value="2020-12-16"/>
+        <endDate value="2020-12-16"/>
+        <numberContract>3539</numberContract>
+        <client>
+            <id>4</id>
+            <surname>Sidorova</surname>
+            <firstName>Svetlana</firstName>
+            <patronymic>Ivanovna</patronymic>
+            <dateOfBirth value="1982-05-19"/>
+            <gender>FEMALE</gender>
+            <numberPassport>835621</numberPassport>
+            <seriesPassport>2014</seriesPassport>
+        </client>
+        <maximumSpeed>200</maximumSpeed>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="cellularContract">
+        <id>6</id>
+        <startDate value="2020-12-16"/>
+        <endDate value="2020-12-16"/>
+        <numberContract>3539</numberContract>
+        <client>
+            <id>4</id>
+            <surname>Sidorova</surname>
+            <firstName>Svetlana</firstName>
+            <patronymic>Ivanovna</patronymic>
+            <dateOfBirth value="1982-05-19"/>
+            <gender>FEMALE</gender>
+            <numberPassport>835621</numberPassport>
+            <seriesPassport>2014</seriesPassport>
+        </client>
+        <minutes>1500</minutes>
+        <gbInternet>100</gbInternet>
+        <sms>500</sms>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tvContract">
+        <id>9</id>
+        <startDate value="2020-10-23"/>
+        <endDate value="2021-10-23"/>
+        <numberContract>5436</numberContract>
+        <client>
+            <id>9</id>
+            <surname>Ivanov</surname>
+            <firstName>Ivan</firstName>
+            <patronymic>Petrovich</patronymic>
+            <dateOfBirth value="1986-02-12"/>
+            <gender>MALE</gender>
+            <numberPassport>892314</numberPassport>
+            <seriesPassport>2014</seriesPassport>
+        </client>
+        <packageChannel>PLUSPLUS</packageChannel>
+    </contract>
+    <contract xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="tvContract">
+        <id>10</id>
+        <startDate value="2020-10-23"/>
+        <endDate value="2021-10-23"/>
+        <numberContract>23543</numberContract>
+        <client>
+            <id>10</id>
+            <surname>Ivanov</surname>
+            <firstName>Petr</firstName>
+            <patronymic>Ivanovich</patronymic>
+            <dateOfBirth value="1986-02-12"/>
+            <gender>MALE</gender>
+            <numberPassport>876321</numberPassport>
+            <seriesPassport>2014</seriesPassport>
+        </client>
+        <packageChannel>DEFAULT</packageChannel>
+    </contract>
+</repository>

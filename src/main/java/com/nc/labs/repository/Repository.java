@@ -3,8 +3,11 @@ package com.nc.labs.repository;
 import com.nc.labs.di.Inject;
 import com.nc.labs.entity.Contract;
 import com.nc.labs.sort.ISorter;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import java.util.Comparator;
 import java.util.function.Predicate;
 
@@ -15,6 +18,8 @@ import java.util.function.Predicate;
  * @version 1.3
  */
 @NoArgsConstructor
+@XmlRootElement(name = "repository")
+@XmlType(propOrder = {"arrayContract"})
 public class Repository<T> {
     /**
      * The initial size of the array
@@ -24,6 +29,8 @@ public class Repository<T> {
     /**
      * Array for storing contracts
      */
+    @Getter
+    @XmlElement(name = "contract")
     private Contract[] arrayContract = new Contract[size];
 
     /**
