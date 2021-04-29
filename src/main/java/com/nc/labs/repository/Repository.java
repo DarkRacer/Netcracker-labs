@@ -12,7 +12,7 @@ import java.util.function.Predicate;
  * This class describes a repository for storing various contracts
  * @param <T> This describes type parameter
  * @author Maksim Shcherbakov
- * @version 1.2
+ * @version 1.3
  */
 @NoArgsConstructor
 public class Repository<T> {
@@ -163,5 +163,13 @@ public class Repository<T> {
      */
     public void sort(final Comparator<T> comparator) {
         sorter.sort(arrayContract, comparator);
+    }
+
+    /**
+     * Method for getting all object repository
+     * @return all object repository
+     */
+    public Contract[] getAll() {
+        return this.arrayContract;
     }
 }

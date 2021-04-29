@@ -1,144 +1,507 @@
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idContract
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: startDate
-2020-12-04 21:37:34 INFO  Validator:48 - Status: OK Message: null Field: endDate
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: numberContract
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idClient
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: surname
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: firstName
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: patronymic
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: dateOfBirth
-2020-12-04 21:37:34 INFO  Validator:34 - Status: OK Message: null Field: gender
-2020-12-04 21:37:34 INFO  Validator:42 - Status: OK Message: null Field: passportNumber
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: passportSeries
-2020-12-04 21:37:34 INFO  Validator:35 - Status: OK Message: null Field: packageChannel
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idContract
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: startDate
-2020-12-04 21:37:34 INFO  Validator:48 - Status: OK Message: null Field: endDate
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: numberContract
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idClient
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: surname
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: firstName
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: patronymic
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: dateOfBirth
-2020-12-04 21:37:34 INFO  Validator:34 - Status: OK Message: null Field: gender
-2020-12-04 21:37:34 INFO  Validator:42 - Status: OK Message: null Field: passportNumber
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: passportSeries
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: maximumSpeed
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idContract
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: startDate
-2020-12-04 21:37:34 INFO  Validator:48 - Status: OK Message: null Field: endDate
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: numberContract
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idClient
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: surname
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: firstName
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: patronymic
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: dateOfBirth
-2020-12-04 21:37:34 INFO  Validator:34 - Status: OK Message: null Field: gender
-2020-12-04 21:37:34 INFO  Validator:42 - Status: OK Message: null Field: passportNumber
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: passportSeries
-2020-12-04 21:37:34 INFO  Validator:40 - Status: OK Message: null Field: minute
-2020-12-04 21:37:34 INFO  Validator:40 - Status: OK Message: null Field: gbInternet
-2020-12-04 21:37:34 INFO  Validator:39 - Status: OK Message: null Field: sms
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idContract
-2020-12-04 21:37:34 WARN  Validator:38 - Status: RED_RISK Message: The date cannot be later than the date that is today Field: startDate
-2020-12-04 21:37:34 WARN  Validator:42 - Status: YELLOW_RISK Message: The end date is equal to the start date Field: endDate
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: numberContract
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idClient
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: surname
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: firstName
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: patronymic
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: dateOfBirth
-2020-12-04 21:37:34 INFO  Validator:34 - Status: OK Message: null Field: gender
-2020-12-04 21:37:34 INFO  Validator:42 - Status: OK Message: null Field: passportNumber
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: passportSeries
-2020-12-04 21:37:34 INFO  Validator:35 - Status: OK Message: null Field: packageChannel
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idContract
-2020-12-04 21:37:34 WARN  Validator:38 - Status: RED_RISK Message: The date cannot be later than the date that is today Field: startDate
-2020-12-04 21:37:34 WARN  Validator:42 - Status: YELLOW_RISK Message: The end date is equal to the start date Field: endDate
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: numberContract
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idClient
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: surname
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: firstName
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: patronymic
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: dateOfBirth
-2020-12-04 21:37:34 INFO  Validator:34 - Status: OK Message: null Field: gender
-2020-12-04 21:37:34 INFO  Validator:42 - Status: OK Message: null Field: passportNumber
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: passportSeries
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: maximumSpeed
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idContract
-2020-12-04 21:37:34 WARN  Validator:38 - Status: RED_RISK Message: The date cannot be later than the date that is today Field: startDate
-2020-12-04 21:37:34 WARN  Validator:42 - Status: YELLOW_RISK Message: The end date is equal to the start date Field: endDate
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: numberContract
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idClient
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: surname
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: firstName
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: patronymic
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: dateOfBirth
-2020-12-04 21:37:34 INFO  Validator:34 - Status: OK Message: null Field: gender
-2020-12-04 21:37:34 INFO  Validator:42 - Status: OK Message: null Field: passportNumber
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: passportSeries
-2020-12-04 21:37:34 INFO  Validator:40 - Status: OK Message: null Field: minute
-2020-12-04 21:37:34 INFO  Validator:40 - Status: OK Message: null Field: gbInternet
-2020-12-04 21:37:34 INFO  Validator:39 - Status: OK Message: null Field: sms
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idContract
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: startDate
-2020-12-04 21:37:34 INFO  Validator:48 - Status: OK Message: null Field: endDate
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: numberContract
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idClient
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: surname
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: firstName
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: patronymic
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: dateOfBirth
-2020-12-04 21:37:34 ERROR Validator:28 - Status: ERROR Message: Gender is not specified or specified incorrectly Field: gender
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idContract
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: startDate
-2020-12-04 21:37:34 INFO  Validator:48 - Status: OK Message: null Field: endDate
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: numberContract
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idClient
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: surname
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: firstName
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: patronymic
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: dateOfBirth
-2020-12-04 21:37:34 INFO  Validator:34 - Status: OK Message: null Field: gender
-2020-12-04 21:37:34 INFO  Validator:42 - Status: OK Message: null Field: passportNumber
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: passportSeries
-2020-12-04 21:37:34 INFO  Validator:35 - Status: OK Message: null Field: packageChannel
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idContract
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: startDate
-2020-12-04 21:37:34 INFO  Validator:48 - Status: OK Message: null Field: endDate
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: numberContract
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idClient
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: surname
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: firstName
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: patronymic
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: dateOfBirth
-2020-12-04 21:37:34 INFO  Validator:34 - Status: OK Message: null Field: gender
-2020-12-04 21:37:34 INFO  Validator:42 - Status: OK Message: null Field: passportNumber
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: passportSeries
-2020-12-04 21:37:34 INFO  Validator:35 - Status: OK Message: null Field: packageChannel
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idContract
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: startDate
-2020-12-04 21:37:34 INFO  Validator:48 - Status: OK Message: null Field: endDate
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: numberContract
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idClient
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: surname
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: firstName
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: patronymic
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: dateOfBirth
-2020-12-04 21:37:34 INFO  Validator:34 - Status: OK Message: null Field: gender
-2020-12-04 21:37:34 INFO  Validator:42 - Status: OK Message: null Field: passportNumber
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: passportSeries
-2020-12-04 21:37:34 INFO  Validator:35 - Status: OK Message: null Field: packageChannel
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idContract
-2020-12-04 21:37:34 ERROR Validator:30 - Status: ERROR Message: This field must contain only the date(DD.MM. YYYY) Field: startDate
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idContract
-2020-12-04 21:37:34 WARN  Validator:38 - Status: RED_RISK Message: The date cannot be later than the date that is today Field: startDate
-2020-12-04 21:37:34 INFO  Validator:48 - Status: OK Message: null Field: endDate
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: numberContract
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: idClient
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: surname
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: firstName
-2020-12-04 21:37:34 INFO  Validator:41 - Status: OK Message: null Field: patronymic
-2020-12-04 21:37:34 INFO  Validator:45 - Status: OK Message: null Field: dateOfBirth
-2020-12-04 21:37:34 INFO  Validator:34 - Status: OK Message: null Field: gender
-2020-12-04 21:37:34 ERROR Validator:28 - Status: ERROR Message: This field must only contain numbers Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 INFO  Validator:46 - Status: OK Message: null Field: endDate
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:34 - Status: OK Message: null Field: packageChannel
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 INFO  Validator:46 - Status: OK Message: null Field: endDate
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: maximumSpeed
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 INFO  Validator:46 - Status: OK Message: null Field: endDate
+2021-04-29 13:18:24 INFO  Validator:38 - Status: OK Message: null Field: gbInternet
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:38 - Status: OK Message: null Field: minute
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:37 - Status: OK Message: null Field: sms
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 WARN  Validator:41 - Status: YELLOW_RISK Message: The end date is equal to the start date Field: endDate
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:34 - Status: OK Message: null Field: packageChannel
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 WARN  Validator:41 - Status: YELLOW_RISK Message: The end date is equal to the start date Field: endDate
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: maximumSpeed
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 WARN  Validator:41 - Status: YELLOW_RISK Message: The end date is equal to the start date Field: endDate
+2021-04-29 13:18:24 INFO  Validator:38 - Status: OK Message: null Field: gbInternet
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:38 - Status: OK Message: null Field: minute
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:37 - Status: OK Message: null Field: sms
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 ERROR Validator:28 - Status: ERROR Message: Gender is not specified or specified incorrectly Field: gender
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 INFO  Validator:46 - Status: OK Message: null Field: endDate
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:34 - Status: OK Message: null Field: packageChannel
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 INFO  Validator:46 - Status: OK Message: null Field: endDate
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:34 - Status: OK Message: null Field: packageChannel
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 INFO  Validator:46 - Status: OK Message: null Field: endDate
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:34 - Status: OK Message: null Field: packageChannel
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 WARN  Validator:35 - Status: RED_RISK Message: The date cannot be later than the contract start date Field: endDate
+2021-04-29 13:18:24 INFO  Validator:38 - Status: OK Message: null Field: gbInternet
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:38 - Status: OK Message: null Field: minute
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:37 - Status: OK Message: null Field: sms
+2021-04-29 13:18:24 ERROR Validator:30 - Status: ERROR Message: This field must contain only the date(DD.MM. YYYY) Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 ERROR Validator:28 - Status: ERROR Message: This field must only contain numbers Field: passportNumber
+2021-04-29 13:18:24 INFO  Connect:49 - Connection established
+2021-04-29 13:18:24 INFO  JDBCRepo:302 - Getting database dump in contacts repository was successfully
+2021-04-29 13:18:24 INFO  Connect:49 - Connection established
+2021-04-29 13:18:24 INFO  JDBCRepo:84 - Database initialization was successful
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 INFO  Validator:46 - Status: OK Message: null Field: endDate
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:34 - Status: OK Message: null Field: packageChannel
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 INFO  Validator:46 - Status: OK Message: null Field: endDate
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: maximumSpeed
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 INFO  Validator:46 - Status: OK Message: null Field: endDate
+2021-04-29 13:18:24 INFO  Validator:38 - Status: OK Message: null Field: gbInternet
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:38 - Status: OK Message: null Field: minute
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:37 - Status: OK Message: null Field: sms
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 WARN  Validator:41 - Status: YELLOW_RISK Message: The end date is equal to the start date Field: endDate
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:34 - Status: OK Message: null Field: packageChannel
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 WARN  Validator:41 - Status: YELLOW_RISK Message: The end date is equal to the start date Field: endDate
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: maximumSpeed
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 WARN  Validator:41 - Status: YELLOW_RISK Message: The end date is equal to the start date Field: endDate
+2021-04-29 13:18:24 INFO  Validator:38 - Status: OK Message: null Field: gbInternet
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:38 - Status: OK Message: null Field: minute
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:37 - Status: OK Message: null Field: sms
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 ERROR Validator:28 - Status: ERROR Message: Gender is not specified or specified incorrectly Field: gender
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 INFO  Validator:46 - Status: OK Message: null Field: endDate
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:34 - Status: OK Message: null Field: packageChannel
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 INFO  Validator:46 - Status: OK Message: null Field: endDate
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:34 - Status: OK Message: null Field: packageChannel
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 INFO  Validator:46 - Status: OK Message: null Field: endDate
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:34 - Status: OK Message: null Field: packageChannel
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 INFO  Validator:40 - Status: OK Message: null Field: passportNumber
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: passportSeries
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: patronymic
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: surname
+2021-04-29 13:18:24 WARN  Validator:35 - Status: RED_RISK Message: The date cannot be later than the contract start date Field: endDate
+2021-04-29 13:18:24 INFO  Validator:38 - Status: OK Message: null Field: gbInternet
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idContract
+2021-04-29 13:18:24 INFO  Validator:38 - Status: OK Message: null Field: minute
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: numberContract
+2021-04-29 13:18:24 INFO  Validator:37 - Status: OK Message: null Field: sms
+2021-04-29 13:18:24 ERROR Validator:30 - Status: ERROR Message: This field must contain only the date(DD.MM. YYYY) Field: startDate
+2021-04-29 13:18:24 INFO  Validator:43 - Status: OK Message: null Field: dateOfBirth
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: firstName
+2021-04-29 13:18:24 INFO  Validator:33 - Status: OK Message: null Field: gender
+2021-04-29 13:18:24 INFO  Validator:39 - Status: OK Message: null Field: idClient
+2021-04-29 13:18:24 ERROR Validator:28 - Status: ERROR Message: This field must only contain numbers Field: passportNumber
+2021-04-29 13:18:24 INFO  Connect:49 - Connection established
+2021-04-29 13:18:24 INFO  JDBCRepo:202 - Checking contract was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:180 - Checking client was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:156 - Client   id: 1
+   Фамилия: Ivanov
+   Имя: Ivan
+   Отчество: Ivanovich
+   Дата рождения: 1986-02-12
+   Пол: MALE
+   Номер паспорта: 892314
+   Серия паспорта: 2013 saved
+2021-04-29 13:18:24 INFO  JDBCRepo:242 - Setting specific fields for tv contract was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:117 - Contract Контракт цифрового телевидения 
+ id: 1
+ Дата начала контракта: 2020-10-23
+ Дата окончания контракта: 2021-10-23
+ Номер контракта: 2343
+ Пакет каналов: PLUS
+ Владелец контракта 
+   id: 1
+   Фамилия: Ivanov
+   Имя: Ivan
+   Отчество: Ivanovich
+   Дата рождения: 1986-02-12
+   Пол: MALE
+   Номер паспорта: 892314
+   Серия паспорта: 2013 saved
+2021-04-29 13:18:24 INFO  JDBCRepo:202 - Checking contract was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:180 - Checking client was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:156 - Client   id: 2
+   Фамилия: Petrov
+   Имя: Petr
+   Отчество: Petrovich
+   Дата рождения: 1975-04-27
+   Пол: MALE
+   Номер паспорта: 853242
+   Серия паспорта: 2012 saved
+2021-04-29 13:18:24 INFO  JDBCRepo:224 - Setting specific fields for internet contract was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:117 - Contract Контракт проводного интернета 
+ id: 2
+ Дата начала контракта: 2020-10-26
+ Дата окончания контракта: 2021-10-26
+ Номер контракта: 12384
+ Максимальная скорость соединения: 500
+ Владелец контракта 
+   id: 2
+   Фамилия: Petrov
+   Имя: Petr
+   Отчество: Petrovich
+   Дата рождения: 1975-04-27
+   Пол: MALE
+   Номер паспорта: 853242
+   Серия паспорта: 2012 saved
+2021-04-29 13:18:24 INFO  JDBCRepo:202 - Checking contract was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:180 - Checking client was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:156 - Client   id: 3
+   Фамилия: Stepanova
+   Имя: Maria
+   Отчество: Stepanova
+   Дата рождения: 1991-07-01
+   Пол: FEMALE
+   Номер паспорта: 832424
+   Серия паспорта: 2013 saved
+2021-04-29 13:18:24 INFO  JDBCRepo:233 - Setting specific fields for cellular contract was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:117 - Contract Контракт сотовой связи 
+ id: 3
+ Дата начала контракта: 2020-02-14
+ Дата окончания контракта: 2021-02-14
+ Номер контракта: 562
+ Количество минут: 1000
+ SMS: 100
+ GB Internet: 50
+ Владелец контракта 
+   id: 3
+   Фамилия: Stepanova
+   Имя: Maria
+   Отчество: Stepanova
+   Дата рождения: 1991-07-01
+   Пол: FEMALE
+   Номер паспорта: 832424
+   Серия паспорта: 2013 saved
+2021-04-29 13:18:24 INFO  JDBCRepo:202 - Checking contract was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:180 - Checking client was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:156 - Client   id: 4
+   Фамилия: Sidorova
+   Имя: Svetlana
+   Отчество: Ivanovna
+   Дата рождения: 1982-05-19
+   Пол: FEMALE
+   Номер паспорта: 835621
+   Серия паспорта: 2014 saved
+2021-04-29 13:18:24 INFO  JDBCRepo:242 - Setting specific fields for tv contract was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:117 - Contract Контракт цифрового телевидения 
+ id: 4
+ Дата начала контракта: 2020-12-16
+ Дата окончания контракта: 2020-12-16
+ Номер контракта: 384539
+ Пакет каналов: DEFAULT
+ Владелец контракта 
+   id: 4
+   Фамилия: Sidorova
+   Имя: Svetlana
+   Отчество: Ivanovna
+   Дата рождения: 1982-05-19
+   Пол: FEMALE
+   Номер паспорта: 835621
+   Серия паспорта: 2014 saved
+2021-04-29 13:18:24 INFO  JDBCRepo:202 - Checking contract was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:180 - Checking client was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:162 - Client    id: 4
+   Фамилия: Sidorova
+   Имя: Svetlana
+   Отчество: Ivanovna
+   Дата рождения: 1982-05-19
+   Пол: FEMALE
+   Номер паспорта: 835621
+   Серия паспорта: 2014 already exists
+2021-04-29 13:18:24 INFO  JDBCRepo:224 - Setting specific fields for internet contract was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:117 - Contract Контракт проводного интернета 
+ id: 5
+ Дата начала контракта: 2020-12-16
+ Дата окончания контракта: 2020-12-16
+ Номер контракта: 3539
+ Максимальная скорость соединения: 200
+ Владелец контракта 
+   id: 4
+   Фамилия: Sidorova
+   Имя: Svetlana
+   Отчество: Ivanovna
+   Дата рождения: 1982-05-19
+   Пол: FEMALE
+   Номер паспорта: 835621
+   Серия паспорта: 2014 saved
+2021-04-29 13:18:24 INFO  JDBCRepo:202 - Checking contract was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:180 - Checking client was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:162 - Client    id: 4
+   Фамилия: Sidorova
+   Имя: Svetlana
+   Отчество: Ivanovna
+   Дата рождения: 1982-05-19
+   Пол: FEMALE
+   Номер паспорта: 835621
+   Серия паспорта: 2014 already exists
+2021-04-29 13:18:24 INFO  JDBCRepo:233 - Setting specific fields for cellular contract was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:117 - Contract Контракт сотовой связи 
+ id: 6
+ Дата начала контракта: 2020-12-16
+ Дата окончания контракта: 2020-12-16
+ Номер контракта: 3539
+ Количество минут: 1500
+ SMS: 500
+ GB Internet: 100
+ Владелец контракта 
+   id: 4
+   Фамилия: Sidorova
+   Имя: Svetlana
+   Отчество: Ivanovna
+   Дата рождения: 1982-05-19
+   Пол: FEMALE
+   Номер паспорта: 835621
+   Серия паспорта: 2014 saved
+2021-04-29 13:18:24 INFO  JDBCRepo:202 - Checking contract was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:180 - Checking client was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:156 - Client   id: 9
+   Фамилия: Ivanov
+   Имя: Ivan
+   Отчество: Petrovich
+   Дата рождения: 1986-02-12
+   Пол: MALE
+   Номер паспорта: 892314
+   Серия паспорта: 2014 saved
+2021-04-29 13:18:24 INFO  JDBCRepo:242 - Setting specific fields for tv contract was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:117 - Contract Контракт цифрового телевидения 
+ id: 9
+ Дата начала контракта: 2020-10-23
+ Дата окончания контракта: 2021-10-23
+ Номер контракта: 5436
+ Пакет каналов: PLUSPLUS
+ Владелец контракта 
+   id: 9
+   Фамилия: Ivanov
+   Имя: Ivan
+   Отчество: Petrovich
+   Дата рождения: 1986-02-12
+   Пол: MALE
+   Номер паспорта: 892314
+   Серия паспорта: 2014 saved
+2021-04-29 13:18:24 INFO  JDBCRepo:202 - Checking contract was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:180 - Checking client was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:156 - Client   id: 10
+   Фамилия: Ivanov
+   Имя: Petr
+   Отчество: Ivanovich
+   Дата рождения: 1986-02-12
+   Пол: MALE
+   Номер паспорта: 876321
+   Серия паспорта: 2014 saved
+2021-04-29 13:18:24 INFO  JDBCRepo:242 - Setting specific fields for tv contract was successfully
+2021-04-29 13:18:24 INFO  JDBCRepo:117 - Contract Контракт цифрового телевидения 
+ id: 10
+ Дата начала контракта: 2020-10-23
+ Дата окончания контракта: 2021-10-23
+ Номер контракта: 23543
+ Пакет каналов: DEFAULT
+ Владелец контракта 
+   id: 10
+   Фамилия: Ivanov
+   Имя: Petr
+   Отчество: Ivanovich
+   Дата рождения: 1986-02-12
+   Пол: MALE
+   Номер паспорта: 876321
+   Серия паспорта: 2014 saved
+2021-04-29 13:18:24 ERROR JDBCRepo:130 - Error: contract null
+2021-04-29 13:18:24 ERROR JDBCRepo:130 - Error: contract null

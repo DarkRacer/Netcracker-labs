@@ -4,11 +4,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Class describes a cellular contract
  * @author Maksim Shcherbakov
- * @version 1.2
+ * @version 1.3
  */
 @Setter
 @Getter
@@ -42,6 +43,33 @@ public class CellularContract extends Contract {
     public CellularContract(final int id, final LocalDate startDate, final LocalDate endDate, final int numberContract,
                             final Client client, final int minutes, final int gbInternet, final int sms) {
         super(id, startDate, endDate, numberContract, client);
+        this.minutes = minutes;
+        this.gbInternet = gbInternet;
+        this.sms = sms;
+    }
+
+    /**
+     * The constructor creates a new cellular contract object
+     * @param id cellular contract identifier
+     * @param startDate cellular contract start date
+     * @param endDate cellular contract end date
+     * @param numberContract cellular contract number
+     * @param client cellular contract client date
+     * @param minutes Minutes under contract
+     * @param gbInternet GB Internet under contract
+     * @param sms SMS under contract
+     */
+    public CellularContract(final int id, final String startDate, final String endDate, final int numberContract,
+                            final Client client, final int minutes, final int gbInternet, final int sms) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate start = LocalDate.parse(startDate, formatter);
+        LocalDate end = LocalDate.parse(endDate, formatter);
+
+        this.setId(id);
+        this.setStartDate(start);
+        this.setEndDate(end);
+        this.setNumberContract(numberContract);
+        this.setClient(client);
         this.minutes = minutes;
         this.gbInternet = gbInternet;
         this.sms = sms;

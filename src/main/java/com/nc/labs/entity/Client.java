@@ -6,13 +6,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Class describes the client
  * @author Maksim Shcherbakov
- * @version 1.1
+ * @version 1.2
  */
 @Setter
 @Getter
@@ -83,5 +85,37 @@ public class Client {
                 + "   Пол: " + gender + "\n"
                 + "   Номер паспорта: " + numberPassport + "\n"
                 + "   Серия паспорта: " + seriesPassport;
+    }
+
+    /**
+     * The constructor creates a new client object
+     * @param id client identifier
+     * @param surname client surname
+     * @param firstName client first name
+     * @param patronymic client patronymic
+     * @param dateOfBirth client date of birth
+     * @param gender client gender
+     * @param numberPassport client passport number
+     * @param seriesPassport client passport series
+     */
+    public Client(final int id, final String surname, final String firstName, final String patronymic,
+                  final String dateOfBirth, final String gender,
+                  final int numberPassport, final int seriesPassport) {
+        this.id = id;
+        this.surname = surname;
+        this.firstName = firstName;
+        this.patronymic = patronymic;
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        this.dateOfBirth = LocalDate.parse(dateOfBirth, formatter);
+
+        for (Gender gen : Gender.values()) {
+            if (gen.toString().equals(gender)) {
+                this.gender = gen;
+            }
+        }
+
+        this.numberPassport = numberPassport;
+        this.seriesPassport = seriesPassport;
     }
 }

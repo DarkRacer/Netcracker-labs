@@ -15,6 +15,8 @@
         <lombok>1.18.4</lombok>
         <com.opencsv>5.3</com.opencsv>
         <log4j>1.2.17</log4j>
+        <postgresql>42.2.20</postgresql>
+        <ibatis-core>3.0</ibatis-core>
         <maven-checkstyle-plugin>3.1.1</maven-checkstyle-plugin>
         <maven-project-info-reports-plugin>2.9</maven-project-info-reports-plugin>
     </properties>
@@ -77,6 +79,18 @@
             <artifactId>log4j</artifactId>
             <version>${log4j}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.ibatis</groupId>
+            <artifactId>ibatis-core</artifactId>
+            <version>${ibatis-core}</version>
+        </dependency>
+
     </dependencies>
 
 </project>
